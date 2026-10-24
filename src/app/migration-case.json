@@ -1,0 +1,2205 @@
+[
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "image",
+        "children": [
+          {
+            "type": "text",
+            "raw": "22.png"
+          }
+        ],
+        "attrs": {
+          "url": "/projects/migration-v37/22.png"
+        }
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "strong",
+        "children": [
+          {
+            "type": "text",
+            "raw": "Роль:"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "raw": " Product Designer"
+      },
+      {
+        "type": "softbreak"
+      },
+      {
+        "type": "strong",
+        "children": [
+          {
+            "type": "text",
+            "raw": "Продукт:"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "raw": " внутренний HR-сервис Ozon — Миграционный кабинет"
+      },
+      {
+        "type": "softbreak"
+      },
+      {
+        "type": "strong",
+        "children": [
+          {
+            "type": "text",
+            "raw": "Платформы:"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "raw": " Desktop + Mobile"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "thematic_break"
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "heading",
+    "attrs": {
+      "level": 1
+    },
+    "style": "atx",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Контекст"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "image",
+        "children": [
+          {
+            "type": "text",
+            "raw": "image.png"
+          }
+        ],
+        "attrs": {
+          "url": "/projects/migration-v37/image.png"
+        }
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "strong",
+        "children": [
+          {
+            "type": "text",
+            "raw": "Миграционный кабинет"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "raw": " — внутренний HR-сервис Ozon для оформления иностранных кандидатов."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "После прохождения отбора кандидат получает доступ к личному кабинету по ссылке из внутреннего сервиса или по почте. Внутри кабинета он должен заполнить миграционную анкету и предоставить необходимые документы."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "На старте анкета представляла собой длинную страницу с последовательностью полей и блоков для загрузки документов."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Моя задача — "
+      },
+      {
+        "type": "strong",
+        "children": [
+          {
+            "type": "text",
+            "raw": "полностью переработать UX/UI анкеты"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "raw": ", сделать сценарий понятнее для пользователей с разным уровнем цифровой грамотности и снизить количество ошибок при заполнении."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "thematic_break"
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "heading",
+    "attrs": {
+      "level": 1
+    },
+    "style": "atx",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Пользователи"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "strong",
+        "children": [
+          {
+            "type": "text",
+            "raw": "Иностранные кандидаты, проходящие оформление на работу в Ozon."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Это отдельная аудитория: для российских кандидатов существует другой сценарий оформления."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "При проектировании важно было учитывать пользователей с "
+      },
+      {
+        "type": "strong",
+        "children": [
+          {
+            "type": "text",
+            "raw": "невысокой цифровой грамотностью"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "raw": ". Для них привычные визуальные паттерны, небольшие текстовые акценты или скрытые интерактивные элементы длинной анкеты были недостаточно очевидными."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Поэтому интерфейс должен был быть максимально прямолинейным:"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Пользователь должен сразу понимать, что сейчас нужно сделать, какой документ приложить и что делать, если он не знает, как это сделать."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "thematic_break"
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "heading",
+    "attrs": {
+      "level": 1
+    },
+    "style": "atx",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Проблема"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Исходная анкета была построена как "
+      },
+      {
+        "type": "strong",
+        "children": [
+          {
+            "type": "text",
+            "raw": "long-form страница"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "raw": "."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Блоки документов формально были разделены, но визуальной иерархии было недостаточно, чтобы пользователи однозначно воспринимали их как отдельные части сценария."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "В результате возникала путаница: например, пользователь мог прикрепить "
+      },
+      {
+        "type": "strong",
+        "children": [
+          {
+            "type": "text",
+            "raw": "паспорт в поле для СНИЛС"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "raw": "."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Проблема была выявлена через:"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "list",
+    "children": [
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "raw": "аналитику заполнения анкеты;"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "raw": "обратную связь от рекрутеров;"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "raw": "возвраты некорректно заполненных анкет."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "tight": false,
+    "bullet": "-",
+    "attrs": {
+      "depth": 0,
+      "ordered": false
+    }
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Из-за ошибок рекрутерам приходилось возвращать кандидатов к анкете и повторно объяснять, что необходимо исправить. "
+      },
+      {
+        "type": "strong",
+        "children": [
+          {
+            "type": "text",
+            "raw": "Это увеличивало нагрузку на рекрутеров, усложняло и удорожало процесс найма."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "heading",
+    "attrs": {
+      "level": 3
+    },
+    "style": "atx",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Основная UX-проблема"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Изначальная версия интерфейса была ориентирована на опытных пользователей, поэтому для целевой аудитории некоторые элементы и сценарии взаимодействия оказались недостаточно понятными и интуитивными."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "thematic_break"
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "heading",
+    "attrs": {
+      "level": 1
+    },
+    "style": "atx",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Цели"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "heading",
+    "attrs": {
+      "level": 3
+    },
+    "style": "atx",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Основная цель"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Ускорить процесс найма сотрудников и "
+      },
+      {
+        "type": "strong",
+        "children": [
+          {
+            "type": "text",
+            "raw": "снизить затраты"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "raw": " на их оформление за счёт упрощения миграционной анкеты. Чем быстрее и корректнее кандидаты заполняют анкету, тем меньше времени рекрутеры тратят на сопровождение и исправление ошибок."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "heading",
+    "attrs": {
+      "level": 3
+    },
+    "style": "atx",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Задачи"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "list",
+    "children": [
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "raw": "Снизить когнитивную нагрузку при заполнении анкеты."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "raw": "Сделать понятным, какие документы необходимы для заполнения каждого поля."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "raw": "Уменьшить количество ошибок при заполнении данных и загрузке документов."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "raw": "Упростить и структурировать длинный сценарий заполнения анкеты."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "raw": "Сделать инструкции понятными без дополнительной помощи рекрутера."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "raw": "Проработать основные ошибки, валидации и состояния интерфейса."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "raw": "Обеспечить единый пользовательский опыт на Desktop и Mobile."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "tight": false,
+    "bullet": "-",
+    "attrs": {
+      "depth": 0,
+      "ordered": false
+    }
+  },
+  {
+    "type": "thematic_break"
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "heading",
+    "attrs": {
+      "level": 1
+    },
+    "style": "atx",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Ограничения"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "heading",
+    "attrs": {
+      "level": 3
+    },
+    "style": "atx",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Ограничение на многошаговый сценарий"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Изначально бизнес не рассматривал использование степпера из-за более высокой стоимости и сложности разработки. Поэтому на первом этапе я сосредоточился на улучшении существующей одностраничной анкеты, сохранив её формат."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "heading",
+    "attrs": {
+      "level": 3
+    },
+    "style": "atx",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Неопределённость требований"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Проект несколько раз передавался между командами, а сроки реализации переносились. Из-за этого часть требований потеряла актуальность, а состав обязательных документов и детали процесса требовали уточнения."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Чтобы восстановить контекст, я инициировал встречи с менеджерами и стейкхолдерами, собрал актуальные требования и уточнил состав необходимых документов для дальнейшего проектирования."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "thematic_break"
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "heading",
+    "attrs": {
+      "level": 1
+    },
+    "style": "atx",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Моя роль"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Я был основным дизайнером проекта и отвечал за полный UX/UI-редизайн миграционной анкеты: от анализа существующего сценария до подготовки макетов к разработке."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "В мою зону ответственности входили:"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "list",
+    "children": [
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "strong",
+                "children": [
+                  {
+                    "type": "text",
+                    "raw": "Анализ текущего сценария"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "raw": " — изучение существующего интерфейса и выявление проблем пользователей."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "strong",
+                "children": [
+                  {
+                    "type": "text",
+                    "raw": "Генерация гипотез"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "raw": " — поиск возможных решений для улучшения пользовательского опыта."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "strong",
+                "children": [
+                  {
+                    "type": "text",
+                    "raw": "Проработка UX-сценария"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "raw": " — пересмотр структуры анкеты, проектирование пользовательского потока и разработка нескольких итераций концепции."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "strong",
+                "children": [
+                  {
+                    "type": "text",
+                    "raw": "Согласование решений"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "raw": " — презентация промежуточных результатов, обсуждение обратной связи и доработка решений совместно с заказчиком."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "strong",
+                "children": [
+                  {
+                    "type": "text",
+                    "raw": "Подготовка макетов к разработке"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "raw": " — финализация интерфейсов для Desktop и Mobile, проработка валидаций, состояний, UX-копирайтинга, информационных подсказок и примеров документов."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "tight": false,
+    "bullet": "-",
+    "attrs": {
+      "depth": 0,
+      "ordered": false
+    }
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "В процессе работы я взаимодействовал с менеджерами, руководителем продукта, разработчиками, тестировщиками и другими стейкхолдерами. Дизайн-решения проходили ревью у дизайн-лида."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "thematic_break"
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "heading",
+    "attrs": {
+      "level": 1
+    },
+    "style": "atx",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Процесс"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "heading",
+    "attrs": {
+      "level": 2
+    },
+    "style": "atx",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Анализ текущего сценария"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "image",
+        "attrs": {
+          "url": "/projects/migration-v37/image 1.png"
+        },
+        "children": [
+          {
+            "type": "text",
+            "raw": "Экран миграционной анкеты — 1"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Начал с анализа существующей анкеты и обратной связи от рекрутеров."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Стало понятно, что проблема не столько в отсутствии разделителей, сколько в "
+      },
+      {
+        "type": "strong",
+        "children": [
+          {
+            "type": "text",
+            "raw": "самой структуре long-form сценария"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "raw": "."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Даже если визуально выделить блоки сильнее, пользователь всё равно должен самостоятельно сопоставлять большое количество информации при скролле."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "thematic_break"
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "heading",
+    "attrs": {
+      "level": 2
+    },
+    "style": "atx",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Первая итерация — улучшить существующую анкету"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "image",
+        "attrs": {
+          "url": "/projects/migration-v37/image 2.png"
+        },
+        "children": [
+          {
+            "type": "text",
+            "raw": "Экран миграционной анкеты — 2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "На старте многошаговый сценарий не рассматривался как желательное решение из-за сложности и стоимости реализации. Поэтому сначала я попробовал сохранить текущую механику — "
+      },
+      {
+        "type": "strong",
+        "children": [
+          {
+            "type": "text",
+            "raw": "одностраничную анкету"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "raw": " — и сделать её более понятной за счёт визуальной структуры:"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "list",
+    "children": [
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "raw": "разделил анкету на более очевидные блоки;"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "raw": "усилил визуальную иерархию;"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "raw": "выделил области, связанные с конкретными документами;"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "raw": "переработал подачу инструкций;"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "raw": "проработал состояния элементов."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "tight": false,
+    "bullet": "-",
+    "attrs": {
+      "depth": 0,
+      "ordered": false
+    }
+  },
+  {
+    "type": "heading",
+    "attrs": {
+      "level": 3
+    },
+    "style": "atx",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Работа с подсказками"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "В исходной версии "
+      },
+      {
+        "type": "strong",
+        "children": [
+          {
+            "type": "text",
+            "raw": "As Is"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "raw": " подсказки уже существовали и были раскрыты. В рамках первой итерации я начал перерабатывать их подачу."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Одним из вариантов стали "
+      },
+      {
+        "type": "strong",
+        "children": [
+          {
+            "type": "text",
+            "raw": "закрытые подсказки с иконками документов"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "raw": ". Идея заключалась в том, чтобы убрать постоянный объём текста со страницы, но оставить пользователю возможность открыть подробную инструкцию при необходимости."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "На этом этапе это было частью проработки решения — "
+      },
+      {
+        "type": "strong",
+        "children": [
+          {
+            "type": "text",
+            "raw": "я не делал вывод о неочевидности такого взаимодействия заранее"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "raw": "."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "thematic_break"
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "image",
+        "attrs": {
+          "url": "/projects/migration-iteration-1.png"
+        },
+        "children": [
+          {
+            "type": "text",
+            "raw": "Первая итерация анкеты Ozon HR"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "heading",
+    "attrs": {
+      "level": 2
+    },
+    "style": "atx",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Вторая итерация — перейти к пошаговому сценарию"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "image",
+        "attrs": {
+          "url": "/projects/migration-v37/image 3.png"
+        },
+        "children": [
+          {
+            "type": "text",
+            "raw": "Экран миграционной анкеты — 3"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "После проработки одностраничного варианта я проанализировал обновлённый сценарий и выявил, что визуального разделения блоков недостаточно. Несмотря на улучшенную иерархию, пользователю по-прежнему требовалось ориентироваться в большом количестве информации на одной странице."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "На основе этого анализа я предложил пересмотреть структуру анкеты и перейти к "
+      },
+      {
+        "type": "strong",
+        "children": [
+          {
+            "type": "text",
+            "raw": "пошаговому сценарию"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "raw": ", в котором каждый этап посвящён отдельному документу. Пользователь последовательно получает инструкцию, заполняет необходимые поля и загружает документ, после чего переходит к следующему этапу."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Первоначально я спроектировал сценарий из "
+      },
+      {
+        "type": "strong",
+        "children": [
+          {
+            "type": "text",
+            "raw": "7 этапов"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "raw": ". Затем инициировал обсуждение с менеджерами и стейкхолдерами, чтобы уточнить требования к документам и определить, какие из них действительно обязательны для трудоустройства."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "В результате удалось "
+      },
+      {
+        "type": "strong",
+        "children": [
+          {
+            "type": "text",
+            "raw": "сократить сценарий до 5 обязательных этапов"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "raw": " и убрать из него лишние шаги."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Такой подход позволил структурировать процесс заполнения анкеты: вместо поиска нужных разделов на длинной странице пользователь последовательно проходит каждый этап."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "thematic_break"
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "image",
+        "attrs": {
+          "url": "/projects/migration-iteration-2.png"
+        },
+        "children": [
+          {
+            "type": "text",
+            "raw": "Вторая итерация анкеты Ozon HR"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "heading",
+    "attrs": {
+      "level": 2
+    },
+    "style": "atx",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Третья итерация — доработать найденное решение"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "image",
+        "attrs": {
+          "url": "/projects/migration-v37/image 4.png"
+        },
+        "children": [
+          {
+            "type": "text",
+            "raw": "Экран миграционной анкеты — 4"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "После перехода на степпер я продолжил прорабатывать решение уже внутри новой структуры."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "На этой итерации дорабатывались:"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "list",
+    "children": [
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "raw": "UI и визуальная иерархия;"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "raw": "обновление компонентов;"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "raw": "подсказки;"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "raw": "состояния элементов;"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "raw": "ошибки и валидации;"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "raw": "примеры документов;"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "raw": "адаптация сценария под Desktop и Mobile."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "tight": false,
+    "bullet": "-",
+    "attrs": {
+      "depth": 0,
+      "ordered": false
+    }
+  },
+  {
+    "type": "heading",
+    "attrs": {
+      "level": 3
+    },
+    "style": "atx",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Информер вместо скрытой подсказки"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "В процессе этой доработки я вернулся к варианту со скрытыми подсказками и смог оценить его уже в контексте финального сценария."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "strong",
+        "children": [
+          {
+            "type": "text",
+            "raw": "Иконка сама по себе не всегда считывается как интерактивный элемент с важной информацией"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "raw": "."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Получается дополнительный шаг:"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "block_quote",
+    "children": [
+      {
+        "type": "paragraph",
+        "children": [
+          {
+            "type": "text",
+            "raw": "заметить иконку → понять, что её можно нажать → открыть информацию → разобраться в инструкции."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Поэтому в финальном варианте критически важная информация стала "
+      },
+      {
+        "type": "strong",
+        "children": [
+          {
+            "type": "text",
+            "raw": "явно доступна в информере"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "raw": ", без необходимости искать её самостоятельно."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Дополнительно появилась кнопка "
+      },
+      {
+        "type": "strong",
+        "children": [
+          {
+            "type": "text",
+            "raw": "«Посмотреть пример»"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "raw": ", через которую пользователь мог открыть подробную инструкцию и посмотреть примеры документов в формате слайдера."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "thematic_break"
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "image",
+        "attrs": {
+          "url": "/projects/migration-iteration-3.png"
+        },
+        "children": [
+          {
+            "type": "text",
+            "raw": "Третья итерация анкеты Ozon HR"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "type": "heading",
+    "attrs": {
+      "level": 1
+    },
+    "style": "atx",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Ключевые дизайн-решения"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "list",
+    "children": [
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "strong",
+                "children": [
+                  {
+                    "type": "text",
+                    "raw": "Перешёл от длинной анкеты к пошаговому сценарию."
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "raw": " Разделил процесс заполнения на последовательные этапы."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "strong",
+                "children": [
+                  {
+                    "type": "text",
+                    "raw": "Сократил количество этапов с 7 до 5."
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "raw": " Совместно со стейкхолдерами уточнил список обязательных документов и упростил сценарий."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "strong",
+                "children": [
+                  {
+                    "type": "text",
+                    "raw": "Заменил скрытые подсказки явными информерами."
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "raw": " Сделал важную информацию заметной и доступной непосредственно в форме."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "strong",
+                "children": [
+                  {
+                    "type": "text",
+                    "raw": "Добавил возможность посмотреть пример документа."
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "raw": " Пользователи могут ознакомиться с образцами документов и самостоятельно разобраться в требованиях к их загрузке."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "tight": false,
+    "bullet": ".",
+    "attrs": {
+      "depth": 0,
+      "ordered": true
+    }
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Дополнительно проработал все основные состояния интерфейса, валидации и ошибки, а также адаптировал сценарий для Desktop и Mobile."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "thematic_break"
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "heading",
+    "attrs": {
+      "level": 1
+    },
+    "style": "atx",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Результат"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "list",
+    "children": [
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "strong",
+                "children": [
+                  {
+                    "type": "text",
+                    "raw": "Уложился в сжатые сроки — 1,5 месяца."
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "raw": " За это время проработал и согласовал решение с учётом внутренних процессов крупной компании."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "strong",
+                "children": [
+                  {
+                    "type": "text",
+                    "raw": "Упростил UX/UI анкеты."
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "raw": " Вместо длинной страницы спроектировал понятный пошаговый сценарий, сократив количество этапов с 7 до 5."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "strong",
+                "children": [
+                  {
+                    "type": "text",
+                    "raw": "Упростил процесс заполнения документов."
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "raw": " Добавил понятные инструкции, примеры документов и информационные подсказки, чтобы пользователи могли самостоятельно заполнять анкету без дополнительной помощи рекрутера."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "strong",
+                "children": [
+                  {
+                    "type": "text",
+                    "raw": "Создал основу для ускорения процесса найма."
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "raw": " Новый сценарий направлен на сокращение времени заполнения анкеты, количества ошибок и нагрузки на рекрутеров."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "tight": false,
+    "bullet": ".",
+    "attrs": {
+      "depth": 0,
+      "ordered": true
+    }
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "strong",
+        "children": [
+          {
+            "type": "text",
+            "raw": "Финальное решение согласовано и внедрено в продукт."
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "raw": " Точные количественные результаты не раскрываю из-за NDA, поэтому в кейсе делаю акцент на качественных изменениях и процессе проектирования."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "strong",
+        "children": [
+          {
+            "type": "text",
+            "raw": "Дополнительный результат:"
+          }
+        ]
+      },
+      {
+        "type": "text",
+        "raw": " финальное решение использовали как референс в соседнем HR-направлении Ozon при проектировании аналогичного сценария."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "thematic_break"
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "heading",
+    "attrs": {
+      "level": 1
+    },
+    "style": "atx",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Backlog / дальнейшее развитие"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "После запуска появилась идея внедрить автоматический перевод анкеты на язык кандидата, чтобы снизить языковой барьер, упростить заполнение и сократить потребность в помощи рекрутера."
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "paragraph",
+    "children": [
+      {
+        "type": "text",
+        "raw": "Это потенциально позволит:"
+      }
+    ]
+  },
+  {
+    "type": "blank_line"
+  },
+  {
+    "type": "list",
+    "children": [
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "raw": "снизить языковой барьер;"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "raw": "сделать инструкции и подсказки более понятными;"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "raw": "дополнительно снизить когнитивную нагрузку;"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "list_item",
+        "children": [
+          {
+            "type": "paragraph",
+            "children": [
+              {
+                "type": "text",
+                "raw": "уменьшить зависимость от помощи рекрутера при заполнении."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "tight": false,
+    "bullet": "-",
+    "attrs": {
+      "depth": 0,
+      "ordered": false
+    }
+  }
+]

@@ -1,0 +1,65 @@
+
+.global-case{max-width:100%;color:#242424;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}.global-case .global-section{margin:0 0 76px}.global-case h2{font-size:clamp(27px,3vw,40px);letter-spacing:-.035em;line-height:1.2;margin:48px 0 24px}.global-case h3{font-size:24px;letter-spacing:-.025em;margin:34px 0 18px}.global-case h4{font-size:20px}.global-case p,.global-case li{font-size:16px;line-height:1.75}.global-case p{margin:12px 0}.global-case li{margin:8px 0}.global-case ul,.global-case ol{padding-left:25px}.global-case img{max-width:100%;height:auto;border-radius:12px}.global-case a{color:#1769d4;text-decoration:underline;text-underline-offset:4px}.global-case blockquote{border-left:3px solid #d7e8ff;background:#f3f8ff;padding:16px 22px;margin:22px 0;border-radius:0 10px 10px 0}.global-accordions{border-top:1px solid #e4e4e4;margin:22px 0 32px}.global-accordion{border-bottom:1px solid #e4e4e4}.global-accordion>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:23px 2px;font-size:19px;font-weight:650;line-height:1.4}.global-accordion>summary::-webkit-details-marker{display:none}.global-chevron{font-size:23px;color:#818181;transition:transform .2s}.global-accordion[open]>.global-chevron,.global-accordion[open]>summary .global-chevron{transform:rotate(180deg)}.global-accordion-body{padding:0 4px 28px}.global-gallery{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start;margin:6px 0 24px}.global-thumb{border:1px solid #ececec;background:#fafafa;border-radius:12px;padding:5px;cursor:zoom-in;transition:transform .15s,box-shadow .15s}.global-thumb:hover{transform:translateY(-3px);box-shadow:0 8px 22px #00000015}.global-thumb img{display:block;width:auto;height:205px;max-width:145px;object-fit:contain;border-radius:7px}.global-case .accordion{border-top:1px solid #e3e3e3}.global-case .accordion>summary{list-style:none;display:flex;justify-content:space-between;cursor:pointer;font-size:19px;font-weight:650;padding:23px 0}.global-case .accordion>summary::-webkit-details-marker{display:none}.global-case .accordion>summary span{color:#888}.global-case .accordion[open]>summary span{transform:rotate(180deg)}.global-case .content{padding-bottom:26px}.global-case .person{border:1px solid #e9e9e9;border-radius:12px;margin:10px 0}.global-case .person>summary{cursor:pointer;padding:16px 18px;display:flex;justify-content:space-between;font-weight:600;list-style:none}.global-case .person>summary::-webkit-details-marker{display:none}.global-case .person-body{padding:6px 18px 20px;border-top:1px solid #eee}.global-case .person-body p{font-size:15px}.global-case .table-scroll{overflow:auto;max-height:540px;border:1px solid #e7e7e7;border-radius:12px}.global-case table{border-collapse:collapse;min-width:1950px;font-size:13px}.global-case th,.global-case td{padding:12px;border-right:1px solid #eee;border-bottom:1px solid #eee;text-align:left;vertical-align:top;min-width:120px}.global-case th{position:sticky;top:0;background:#f4f5f7}.global-case td:first-child,.global-case th:first-child{position:sticky;left:0;background:#fff}.global-case th:first-child{background:#f4f5f7}.global-lightbox{position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:99999;display:none;align-items:center;justify-content:center;padding:52px 70px}.global-lightbox.open{display:flex}.global-lightbox img{max-width:95%;max-height:94vh;object-fit:contain;border-radius:8px}.global-lightbox button{position:absolute;background:#ffffff24;color:#fff;border:1px solid #ffffff45;border-radius:50%;width:42px;height:42px;cursor:pointer;font-size:26px}.global-lightbox .close{right:22px;top:20px}.global-lightbox .prev{left:16px;top:50%}.global-lightbox .next{right:16px;top:50%}.global-lightbox .counter{position:absolute;bottom:14px;color:#fff;font-size:13px}@media(max-width:700px){.global-gallery{gap:8px}.global-thumb img{height:160px;max-width:110px}.global-accordion>summary{font-size:16px}.global-case h2{margin-top:34px}.global-lightbox{padding:60px 38px}}
+
+/* v51 — Ozon Global: approved Ozon HR grid and Buildin editorial rhythm */
+.case .global-case{width:75%;max-width:900px;margin:0 auto;color:#252525;font-size:17px;line-height:1.68}
+.case .global-case>.global-section{margin:0;padding:46px 0 48px;border-bottom:1px solid #e7e9ed}
+.case .global-case>.global-section:last-of-type{border-bottom:0}
+.case .global-case>.global-section h2{font-size:clamp(26px,2.8vw,34px);line-height:1.25;letter-spacing:-.035em;margin:0 0 24px;font-weight:720}
+.case .global-case>.global-section h3{font-size:clamp(20px,2vw,24px);line-height:1.35;letter-spacing:-.02em;margin:32px 0 14px;font-weight:680}
+.case .global-case p,.case .global-case li{font-size:17px;line-height:1.7}
+.case .global-case p{margin:12px 0 16px}
+.case .global-case ul,.case .global-case ol{padding-left:24px;margin:14px 0 20px}
+.case .global-case li{margin:9px 0}
+.case .global-case>.global-section>p:has(>img),.case .global-case>.global-section>p:has(>a>img){margin:24px 0 30px}
+.case .global-case>.global-section>p>img{display:block;width:100%;height:auto;border-radius:18px}
+.case .global-case>p:first-child{margin:0 0 10px}
+.case .global-case>p:first-child img{display:block;width:100%;height:auto;border-radius:22px}
+.case .global-case blockquote{border-left:3px solid #242424;background:transparent;border-radius:0;padding:0 0 0 22px;margin:20px 0}
+.case .global-case .global-accordions{border:0;margin:14px 0 22px}
+.case .global-case .global-accordion{border:0;border-bottom:1px solid #e7e9ed}
+.case .global-case .global-accordion>summary{padding:19px 0;font-size:18px;font-weight:650;outline-offset:3px}
+.case .global-case .global-accordion-body{border-left:2px solid #e9eaed;margin:0 0 12px 9px;padding:0 0 20px 22px}
+.case .global-case .global-gallery{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:12px 0 24px}
+.case .global-case .global-thumb{width:100%;padding:0;border:0;background:transparent;border-radius:6px;overflow:hidden}
+.case .global-case .global-thumb img{width:100%;max-width:100%;height:auto;max-height:280px;object-fit:contain;object-position:top;border-radius:5px}
+.case .global-case .global-accordion-body ul{margin:14px 0}
+.case .global-case .global-jtbd .global-accordion-body>p:first-child{margin-top:0}
+.case .global-case .global-jtbd .global-accordion-body>ul{margin-bottom:0}
+.case .global-case .accordion{border-top:0;border-bottom:1px solid #e7e9ed}
+.case .global-case .accordion>summary{padding:19px 0}
+.case .global-case .content{padding:0 0 22px}
+@media(max-width:760px){.case .global-case{width:100%;max-width:100%}.case .global-case>.global-section{padding:32px 0 36px}.case .global-case p,.case .global-case li{font-size:16px}.case .global-case .global-gallery{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.case .global-case .global-accordion-body{padding-left:14px}}
+
+/* v53 — Ozon Global: consistent mini-accordions and rounded chevrons */
+.case .global-case details.accordion > summary,
+.case .global-case details.person > summary,
+.case .global-case details.global-accordion > summary {
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+  min-height:68px; box-sizing:border-box; line-height:1.4;
+}
+.case .global-case details.accordion > summary span,
+.case .global-case details.person > summary span {
+  font-size:0; flex:0 0 20px; width:20px; height:20px;
+  display:inline-flex; align-items:center; justify-content:center;
+  color:#858585; transform:none; transition:transform .2s ease;
+}
+.case .global-case details.accordion > summary span::before,
+.case .global-case details.person > summary span::before {
+  content:""; display:block; width:9px; height:9px;
+  border-right:2.4px solid currentColor; border-bottom:2.4px solid currentColor;
+  border-radius:1.5px; transform:translateY(-2px) rotate(45deg);
+}
+.case .global-case details.accordion[open] > summary span,
+.case .global-case details.person[open] > summary span {transform:rotate(180deg)}
+.case .global-case details.global-accordion > summary .global-chevron {
+  font-size:0; flex:0 0 20px; width:20px; height:20px; display:inline-flex;
+  align-items:center; justify-content:center; transition:transform .2s ease;
+}
+.case .global-case details.global-accordion > summary .global-chevron::before {
+  content:""; width:9px; height:9px; border-right:2.4px solid currentColor;
+  border-bottom:2.4px solid currentColor; border-radius:1.5px;
+  transform:translateY(-2px) rotate(45deg);
+}
+.case .global-case details.global-accordion[open] > summary .global-chevron {transform:rotate(180deg)}
+@media(max-width:760px){.case .global-case details.accordion>summary,.case .global-case details.global-accordion>summary{min-height:60px}}

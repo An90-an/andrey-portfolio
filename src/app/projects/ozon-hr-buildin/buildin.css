@@ -1,0 +1,33 @@
+/* Isolated visual experiment: Buildin-inspired case layout */
+.ozon-buildin{min-height:100vh;background:#fff;color:#37352f;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:16px;line-height:1.55;}
+.ozon-buildin *{box-sizing:border-box}
+.ozon-buildin__toolbar{position:sticky;top:0;z-index:5;display:flex;justify-content:space-between;gap:16px;padding:13px max(24px,calc((100vw - 1080px)/2));background:rgba(255,255,255,.94);border-bottom:1px solid #ededed;font-size:13px;color:#999;backdrop-filter:blur(12px)}
+.ozon-buildin__toolbar a{color:#666;text-decoration:none}.ozon-buildin__toolbar a:hover{color:#222}
+.ozon-buildin__document{width:min(100% - 48px,708px);margin:0 auto;padding:70px 0 130px}
+.ozon-buildin__emoji{font-size:70px;line-height:1.25;margin-bottom:14px}
+.ozon-buildin__document h1{font-size:40px;line-height:1.2;letter-spacing:-.025em;font-weight:700;margin:0 0 34px;color:#37352f}
+.ozon-buildin__document h2{font-size:32px;line-height:1.3;letter-spacing:-.015em;font-weight:700;margin:34px 0 10px;color:#37352f}
+.ozon-buildin__document h3{font-size:25px;line-height:1.4;font-weight:650;margin:26px 0 8px;color:#37352f}
+.ozon-buildin__document h4{font-size:20px;line-height:1.4;font-weight:700;margin:22px 0 8px;color:#37352f}
+.ozon-buildin__document p{margin:7px 0;white-space:normal}
+.ozon-buildin__document strong{font-weight:700}
+.ozon-buildin__document ul,.ozon-buildin__document ol{padding-left:26px;margin:8px 0 18px}
+.ozon-buildin__document li{padding-left:2px;margin:5px 0}
+.ozon-buildin__document hr{border:0;border-top:1px solid #e9e9e7;margin:25px 0}
+.ozon-buildin__document figure{margin:24px 0 32px;width:100%}
+.ozon-buildin__document figure img{display:block;width:100%;height:auto;border-radius:2px}
+.ozon-buildin__document blockquote{margin:16px 0;padding:2px 0 2px 16px;border-left:3px solid #dedede;color:#666}
+@media(max-width:720px){.ozon-buildin__document{width:calc(100% - 36px);padding-top:40px}.ozon-buildin__document h1{font-size:32px}.ozon-buildin__document h2{font-size:24px}.ozon-buildin__toolbar span{display:none}}
+
+/* Buildin-like structured project facts and semantic callouts. */
+.ozon-buildin__facts{margin:28px 0 22px;line-height:1.55}
+.ozon-buildin__facts strong{font-weight:700}
+.ozon-buildin__callout{display:flex;align-items:flex-start;gap:12px;padding:15px 18px;border-radius:10px;margin:12px 0 16px;line-height:1.6}
+.ozon-buildin__callout>span{flex:0 0 25px;font-size:22px;line-height:1.4}
+.ozon-buildin__callout>div{flex:1;min-width:0}
+.ozon-buildin__callout--info{background:#e7f5ff}
+.ozon-buildin__callout--warning{background:#fff9e1}
+.ozon-buildin__document h2{margin-top:40px;margin-bottom:14px}
+.ozon-buildin__document h3{margin-top:30px;margin-bottom:12px}
+.ozon-buildin__document h4{margin-top:22px;margin-bottom:9px}
+@media(max-width:720px){.ozon-buildin__document h2{font-size:27px}.ozon-buildin__document h3{font-size:23px}.ozon-buildin__document h4{font-size:19px}.ozon-buildin__callout{padding:12px 14px}}

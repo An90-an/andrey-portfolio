@@ -1,0 +1,242 @@
+<div class="global-case"><p><img alt="1111111111.png" src="/projects/global-case/1111111111.png"/></p>
+<section class="global-section"><h2>Погружение в задачу</h2>
+<p>Ozon Global позволяет пользователям заказывать товары из Китая внутри привычной экосистемы Ozon. Несмотря на спрос и широкий ассортимент, сервис регулярно сталкивается с негативом, связанным со сроками доставки, отменами и потерей доверия.</p>
+<p>По отзывам в App Store и внешних платформах было заметно, что пользователи воспринимают международные заказы по ментальной модели локальной доставки. Любое отклонение от ожидаемых сроков интерпретируется как ошибка или обман со стороны Ozon, а не как особенность международной логистики.</p>
+<p><strong>Задача исследования:</strong> понять, где именно ломается пользовательский путь при заказе из Китая и какие продуктовые решения могут снизить негатив, тревожность и отток пользователей.</p>
+
+</section><section class="global-section"><h2>Исследования</h2>
+<h3>Источники данных и методология</h3>
+<p>Исследование проводилось в формате качественного desk research и анализа пользовательских сигналов:</p>
+<p><img alt="Отзывы пользователей Ozon Global" src="/projects/global-case/reviews-research.png"/></p>
+<ul>
+<li><p>Отзывы пользователей в App Store (заказы Ozon Global)</p>
+</li>
+<li><p>Отзывы на внешних платформах (Otzovik, IRecommend)</p>
+</li>
+<li><p>Анализ пользовательских сценариев и обращений в поддержку (по открытым источникам)</p>
+</li>
+<li><p>Бенчмаркинг конкурентов с международной доставкой</p>
+</li>
+</ul>
+<h3>Формулировка проблемы</h3>
+<p>По совокупности данных была выявлена системная UX‑проблема:</p>
+<blockquote>
+<p><strong>Пользователи формируют ожидания доставки Ozon Global по модели локальных заказов, не осознают риски международной доставки и теряют доверие при первом отклонении от обещанных сроков.</strong></p>
+</blockquote>
+<p>Ключевой момент — проблема воспринимается пользователем <strong>как ответственность Ozon</strong>, а не отдельного продавца или логистического партнёра. Это усиливает негатив, снижает лояльность и влияет на повторные покупки.</p>
+
+</section><section class="global-section"><h2>Сегментация пользователей</h2>
+<p>В рамках исследования были выделены сегменты:</p>
+<ul>
+<li><p><strong>Новые пользователи Ozon</strong> — не имеют опыта международных заказов</p>
+</li>
+<li><p><strong>Постоянные пользователи Ozon (локальные → Global)</strong> — переносят прошлый локальный опыт на Global</p>
+</li>
+<li><p><strong>Опытные пользователи Ozon Global</strong> — понимают длительность доставки, но ожидают прозрачности</p>
+</li>
+</ul>
+<p><strong>Основание сегментации:</strong> опыт с международной доставкой, частота заказов, чувствительность к срокам.</p>
+<p>Дополнительно выделен сквозной сценарий:</p>
+<ul>
+<li><strong>Пользователи с критичными дедлайнами</strong> (подарки, события, даты)</li>
+</ul>
+
+</section><section class="global-section"><h2>JTBD</h2>
+<details class="global-accordion global-jtbd"><summary>Новые пользователи Ozon<span aria-hidden="true" class="global-chevron">⌄</span></summary><div class="global-accordion-body">
+<p><strong>Когда</strong> я впервые заказываю товар из Китая, <strong>я хочу</strong> понимать реальные сроки и риски доставки, <strong>чтобы</strong> принять осознанное решение и не разочароваться после покупки.</p>
+<ul>
+<li><p>Неочевидно, что доставка нестабильна</p>
+</li>
+<li><p>Недостаточно сигналов «это международный заказ»</p>
+</li>
+</ul>
+</div></details><details class="global-accordion global-jtbd"><summary>Постоянные пользователи Ozon (локальные → Global)<span aria-hidden="true" class="global-chevron">⌄</span></summary><div class="global-accordion-body">
+<p><strong>Когда</strong> я заказываю товар из Китая вместо локального, <strong>я хочу</strong> быть уверен, что сроки хотя бы приблизительно соблюдаются, <strong>чтобы</strong> спланировать покупку.</p>
+<ul>
+<li><p>Ожидания сформированы прошлым локальным опытом</p>
+</li>
+<li><p>Перенос сроков воспринимается как обман</p>
+</li>
+</ul>
+</div></details><details class="global-accordion global-jtbd"><summary>Опытные пользователи Ozon Global<span aria-hidden="true" class="global-chevron">⌄</span></summary><div class="global-accordion-body">
+<p><strong>Когда</strong> мой заказ задерживается, <strong>я хочу</strong> понимать, на каком этапе он застрял и что с этим можно сделать, <strong>чтобы</strong>чувствовать контроль над ситуацией.</p>
+<ul>
+<li><p>Статусы не объясняют происходящее</p>
+</li>
+<li><p>Нет ощущения управляемости</p>
+</li>
+</ul>
+</div></details><details class="global-accordion global-jtbd"><summary>Пользователи с критичным сценарием<span aria-hidden="true" class="global-chevron">⌄</span></summary><div class="global-accordion-body">
+<p><strong>Когда</strong> доставка срывается, <strong>я хочу</strong> быстро получить понятный ответ и поддержку от человека, <strong>чтобы</strong>минимизировать стресс и ущерб.</p>
+<ul>
+<li><p>Бот не закрывает эмоциональную потребность</p>
+</li>
+<li><p>Отсутствует сценарий «спасения ситуации»</p>
+</li>
+</ul>
+</div></details>
+
+</section><section class="global-section"><h2>Анализ конкурентов</h2><div class="global-accordions"><details class="global-accordion global-competitor"><summary>AliExpress<span class="global-chevron">⌄</span></summary><div class="global-accordion-body"><div class="global-gallery"><button aria-label="Увеличить экран 1 — AliExpress" class="global-thumb" data-full="/projects/global-case/IMG_4263.PNG" type="button"><img alt="AliExpress — экран 1" loading="lazy" src="/projects/global-case/IMG_4263.PNG"/></button><button aria-label="Увеличить экран 2 — AliExpress" class="global-thumb" data-full="/projects/global-case/IMG_4264.PNG" type="button"><img alt="AliExpress — экран 2" loading="lazy" src="/projects/global-case/IMG_4264.PNG"/></button><button aria-label="Увеличить экран 3 — AliExpress" class="global-thumb" data-full="/projects/global-case/IMG_4265.PNG" type="button"><img alt="AliExpress — экран 3" loading="lazy" src="/projects/global-case/IMG_4265.PNG"/></button><button aria-label="Увеличить экран 4 — AliExpress" class="global-thumb" data-full="/projects/global-case/IMG_4266.PNG" type="button"><img alt="AliExpress — экран 4" loading="lazy" src="/projects/global-case/IMG_4266.PNG"/></button><button aria-label="Увеличить экран 5 — AliExpress" class="global-thumb" data-full="/projects/global-case/IMG_4267.PNG" type="button"><img alt="AliExpress — экран 5" loading="lazy" src="/projects/global-case/IMG_4267.PNG"/></button></div><ul>
+<li><p>Долгие сроки заявлены сразу</p>
+<ul>
+<li><p>Показ этапов международной логистики</p>
+</li>
+<li><p>Диапазоны дат доставки</p>
+</li>
+<li><p>Чат с продавцом, споры</p>
+</li>
+</ul>
+<p><strong>Вывод:</strong> честная коммуникация снижает ожидания и негатив.</p>
+</li>
+</ul>
+</div></details><details class="global-accordion global-competitor"><summary>Яндекс Маркет (зарубежные заказы)<span class="global-chevron">⌄</span></summary><div class="global-accordion-body"><div class="global-gallery"><button aria-label="Увеличить экран 1 — Яндекс Маркет (зарубежные заказы)" class="global-thumb" data-full="/projects/global-case/IMG_4289.PNG" type="button"><img alt="Яндекс Маркет (зарубежные заказы) — экран 1" loading="lazy" src="/projects/global-case/IMG_4289.PNG"/></button><button aria-label="Увеличить экран 2 — Яндекс Маркет (зарубежные заказы)" class="global-thumb" data-full="/projects/global-case/IMG_4290.PNG" type="button"><img alt="Яндекс Маркет (зарубежные заказы) — экран 2" loading="lazy" src="/projects/global-case/IMG_4290.PNG"/></button><button aria-label="Увеличить экран 3 — Яндекс Маркет (зарубежные заказы)" class="global-thumb" data-full="/projects/global-case/IMG_4291.PNG" type="button"><img alt="Яндекс Маркет (зарубежные заказы) — экран 3" loading="lazy" src="/projects/global-case/IMG_4291.PNG"/></button><button aria-label="Увеличить экран 4 — Яндекс Маркет (зарубежные заказы)" class="global-thumb" data-full="/projects/global-case/IMG_4292.PNG" type="button"><img alt="Яндекс Маркет (зарубежные заказы) — экран 4" loading="lazy" src="/projects/global-case/IMG_4292.PNG"/></button></div><ul>
+<li><p>Явная маркировка «из‑за рубежа»</p>
+<ul>
+<li><p>Деление доставки на этапы</p>
+</li>
+<li><p>Предупреждения о сдвигах сроков</p>
+</li>
+</ul>
+<p><strong>Вывод:</strong> управление ожиданиями эффективнее, чем попытка выглядеть быстрым.</p>
+</li>
+</ul>
+</div></details><details class="global-accordion global-competitor"><summary>CDEK Forward<span class="global-chevron">⌄</span></summary><div class="global-accordion-body"><div class="global-gallery"><button aria-label="Увеличить экран 1 — CDEK Forward" class="global-thumb" data-full="/projects/global-case/IMG_4293.PNG" type="button"><img alt="CDEK Forward — экран 1" loading="lazy" src="/projects/global-case/IMG_4293.PNG"/></button><button aria-label="Увеличить экран 2 — CDEK Forward" class="global-thumb" data-full="/projects/global-case/IMG_4294.PNG" type="button"><img alt="CDEK Forward — экран 2" loading="lazy" src="/projects/global-case/IMG_4294.PNG"/></button><button aria-label="Увеличить экран 3 — CDEK Forward" class="global-thumb" data-full="/projects/global-case/IMG_4295.PNG" type="button"><img alt="CDEK Forward — экран 3" loading="lazy" src="/projects/global-case/IMG_4295.PNG"/></button><button aria-label="Увеличить экран 4 — CDEK Forward" class="global-thumb" data-full="/projects/global-case/IMG_4296.PNG" type="button"><img alt="CDEK Forward — экран 4" loading="lazy" src="/projects/global-case/IMG_4296.PNG"/></button><button aria-label="Увеличить экран 5 — CDEK Forward" class="global-thumb" data-full="/projects/global-case/IMG_4297.PNG" type="button"><img alt="CDEK Forward — экран 5" loading="lazy" src="/projects/global-case/IMG_4297.PNG"/></button></div><ul>
+<li><p>Подробное объяснение процесса доставки</p>
+<ul>
+<li>Деление пути на логистические этапы</li>
+</ul>
+<p><strong>Вывод:</strong> понимание процесса повышает терпимость к ожиданию.</p>
+</li>
+</ul>
+</div></details><details class="global-accordion global-competitor"><summary>Amazon Global<span class="global-chevron">⌄</span></summary><div class="global-accordion-body"><div class="global-gallery"><button aria-label="Увеличить экран 1 — Amazon Global" class="global-thumb" data-full="/projects/global-case/IMG_4308.JPG" type="button"><img alt="Amazon Global — экран 1" loading="lazy" src="/projects/global-case/IMG_4308.JPG"/></button><button aria-label="Увеличить экран 2 — Amazon Global" class="global-thumb" data-full="/projects/global-case/IMG_4309.JPG" type="button"><img alt="Amazon Global — экран 2" loading="lazy" src="/projects/global-case/IMG_4309.JPG"/></button><button aria-label="Увеличить экран 3 — Amazon Global" class="global-thumb" data-full="/projects/global-case/IMG_4310.JPG" type="button"><img alt="Amazon Global — экран 3" loading="lazy" src="/projects/global-case/IMG_4310.JPG"/></button></div><ul>
+<li><p>Чёткое разделение local / international</p>
+<ul>
+<li><p>Диапазоны сроков</p>
+</li>
+<li><p>Акцент на гарантиях и возвратах</p>
+</li>
+</ul>
+<p><strong>Вывод:</strong> высокий уровень доверия компенсирует долгие сроки.</p>
+</li>
+</ul>
+</div></details><details class="global-accordion global-competitor"><summary>eBay<span class="global-chevron">⌄</span></summary><div class="global-accordion-body"><div class="global-gallery"><button aria-label="Увеличить экран 1 — eBay" class="global-thumb" data-full="/projects/global-case/IMG_4303.JPG" type="button"><img alt="eBay — экран 1" loading="lazy" src="/projects/global-case/IMG_4303.JPG"/></button><button aria-label="Увеличить экран 2 — eBay" class="global-thumb" data-full="/projects/global-case/IMG_4304.JPG" type="button"><img alt="eBay — экран 2" loading="lazy" src="/projects/global-case/IMG_4304.JPG"/></button><button aria-label="Увеличить экран 3 — eBay" class="global-thumb" data-full="/projects/global-case/IMG_4305.JPG" type="button"><img alt="eBay — экран 3" loading="lazy" src="/projects/global-case/IMG_4305.JPG"/></button><button aria-label="Увеличить экран 4 — eBay" class="global-thumb" data-full="/projects/global-case/IMG_4306.JPG" type="button"><img alt="eBay — экран 4" loading="lazy" src="/projects/global-case/IMG_4306.JPG"/></button><button aria-label="Увеличить экран 5 — eBay" class="global-thumb" data-full="/projects/global-case/IMG_4307.JPG" type="button"><img alt="eBay — экран 5" loading="lazy" src="/projects/global-case/IMG_4307.JPG"/></button></div><ul>
+<li><p>Явное указание страны отправления</p>
+<ul>
+<li><p>Визуальное разделение локальных и международных заказов</p>
+</li>
+<li><p>Диапазоны сроков с пояснениями</p>
+</li>
+<li><p>Детальный статус заказа</p>
+</li>
+<li><p>Защита покупателя и сценарии эскалации</p>
+</li>
+</ul>
+<p><strong>Вывод:</strong> снижение негатива достигается за счёт раннего осознания международного заказа и ощущения защищённости.</p>
+</li>
+</ul>
+
+</div></details></div><p><strong>Общий вывод:</strong> конкуренты показывают, что ключевая ценность в международной доставке — не скорость, а управление ожиданиями. Явное разделение локальных и зарубежных заказов, диапазоны сроков, прозрачный трекинг и понятные сценарии поддержки снижают негатив и повышают доверие даже при долгой доставке. Попытка выглядеть «как локальный сервис» без объяснения рисков приводит к разрыву ожиданий и росту негатива.</p>
+
+</section><section class="global-section"><h2>Проблемный пользовательский флоу</h2>
+<ol>
+<li><p><strong>Выбор товара</strong> — неочевидно, что товар из Китая → ложная уверенность</p>
+</li>
+<li><p><strong>Оформление заказа</strong> — срок выглядит фиксированным → ожидание</p>
+</li>
+<li><p><strong>Ожидание доставки</strong> — нет объяснений → тревога</p>
+</li>
+<li><p><strong>Задержка</strong> — перенос без причин → злость</p>
+</li>
+<li><p><strong>Поддержка</strong> — бот вместо человека → беспомощность</p>
+</li>
+</ol>
+<h3><strong><a href="https://www.figma.com/design/xe96AttL8VBhNyiMcRSCi2/Ozon-Global.-%D0%90%D0%BD%D0%B4%D1%80%D0%B5%D0%B9-%D0%90%D0%BB%D1%8C%D1%88%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9?node-id=2403-9840&amp;t=BdRKGPHZJXuPMuIt-1" rel="noopener noreferrer" target="_blank">User flow </a></strong></h3>
+
+</section><section class="global-section"><h2>Гипотезы</h2>
+<ol>
+<li><p>Отсутствие осознания международной доставки на этапе выбора формирует неверную ментальную модель.</p>
+</li>
+<li><p>Фиксированная дата доставки воспринимается как обещание сервиса.</p>
+</li>
+<li><p>Отсутствие объяснений при сдвиге сроков усиливает негатив независимо от длительности доставки.</p>
+</li>
+<li><p>Пользователь возлагает ответственность за задержки на платформу Ozon.</p>
+</li>
+<li><p>Отсутствие человеческой поддержки в сценариях задержки усиливает ощущение беспомощности.</p>
+</li>
+<li><p>Детальный трекинг этапов доставки снижает тревожность.</p>
+</li>
+<li><p>Диапазон сроков вместо фиксированной даты снижает восприятие задержек как обмана.</p>
+</li>
+</ol>
+
+</section><section class="global-section"><h2>Метрики успеха</h2>
+<ul>
+<li><p>Снижение обращений в поддержку по Ozon Global</p>
+</li>
+<li><p>Снижение негативных отзывов о сроках доставки</p>
+</li>
+<li><p>Рост повторных заказов Ozon Global</p>
+</li>
+<li><p>Снижение отмен после оформления</p>
+</li>
+<li><p>Снижение логистических издержек</p>
+</li>
+</ul>
+
+</section><section class="global-section"><h2>Валидация гипотез</h2><details class="accordion"><summary>Глубинные интервью <span>⌄</span></summary><div class="content"><p>3 респондента · исходные вопросы и ответы</p><details class="person"><summary>Респондент 1 — Алексей, 27 лет<span>⌄</span></summary><div class="person-body"><p><strong>Сегмент:</strong> активный пользователь Ozon, впервые заказал из Китая</p><p><strong>Контекст:</strong> заказал наушники как подарок</p><p><strong>1. Как часто вы заказываете на Ozon?</strong></p><p>Постоянно, пару раз в месяц точно. Обычно бытовые штуки или электроника.</p><p><strong>2. Последний заказ из Китая — что это было и зачем?</strong></p><p>Наушники, хотел подарить девушке на день рождения.</p><p><strong>3. Когда вы поняли, что товар из Китая?</strong></p><p>Честно — уже после оплаты. Я бы вряд ли заказывал, если бы понял это сразу.</p><p><strong>4. Это было ожидаемо?</strong></p><p>Нет. Я привык, что Ozon — это быстро.</p><p><strong>5. Как вы поняли срок доставки?</strong></p><p>Там была конкретная дата, я воспринял её как обещание.</p><p><strong>6. Это было обещание или ориентир?</strong></p><p>Для меня — обещание. Иначе зачем вообще писать дату?</p><p><strong>7. Планировали ли вы что-то под этот срок?</strong></p><p>Да, подарок. В итоге пришлось срочно покупать другой.</p><p><strong>8. Как вы следили за заказом?</strong></p><p>Заходил почти каждый день. Статусы менялись, но я не понимал, что это значит.</p><p><strong>9. Был момент, когда вы перестали понимать ситуацию?</strong></p><p>Да, когда статус просто «в пути» висел неделями.</p><p><strong>10. Была ли задержка и как вы об этом узнали?</strong></p><p>Да, срок просто перенесли. Без объяснений.</p><p><strong>11. На кого вы возложили ответственность?</strong></p><p>На Ozon. Я же у них покупал.</p><p><strong>12. Что должно измениться?</strong></p><p>Сразу говорить, что это Китай и что сроки — не точные. И объяснять, если что-то идёт не так.</p></div></details><details class="person"><summary>Респондент 2 — Ирина, 54 года<span>⌄</span></summary><div class="person-body"><p><strong>Сегмент:</strong> пожилой пользователь, низкий цифровой опыт</p><p><strong>Контекст:</strong> заказала кухонный гаджет</p><p><strong>1. Как часто вы заказываете на Ozon?</strong></p><p>Не часто. В основном прошу детей, но иногда сама.</p><p><strong>2. Последний заказ из Китая — что это было?</strong></p><p>Тёрка для овощей, понравилась по цене.</p><p><strong>3. Когда вы поняли, что товар из Китая?</strong></p><p>Только когда долго не приходил. Я думала, он где-то на складе.</p><p><strong>4. Это было неожиданно?</strong></p><p>Конечно. Я не знала, что такое вообще бывает.</p><p><strong>5. Как вы поняли срок доставки?</strong></p><p>Там было написано число. Я ждала в этот день.</p><p><strong>6. Это обещание или ориентир?</strong></p><p>Обещание. Иначе я бы не заказывала.</p><p><strong>7. Планировали ли вы что-то под этот срок?</strong></p><p>Да, хотела к приезду гостей.</p><p><strong>8. Как вы следили за заказом?</strong></p><p>Пыталась смотреть, но ничего не понимала. Какие-то слова непонятные.</p><p><strong>9. Был момент, когда вы перестали понимать ситуацию?</strong></p><p>Практически сразу.</p><p><strong>10. Была ли задержка?</strong></p><p>Да, и меня никто не предупредил нормально.</p><p><strong>11. Кто виноват, по вашему мнению?</strong></p><p>Ozon. Я же не с Китаем договаривалась.</p><p><strong>12. Что должно измениться?</strong></p><p>Нужно писать проще. И сразу говорить, что ждать долго.</p></div></details><details class="person"><summary>Респондент 3 — Максим, 35 лет<span>⌄</span></summary><div class="person-body"><p><strong>Сегмент:</strong> опытный пользователь маркетплейсов</p><p><strong>Контекст:</strong> регулярно заказывает из Китая</p><p><strong>1. Как часто вы заказываете на Ozon?</strong></p><p>Постоянно, но из Китая беру редко — только если понимаю риски.</p><p><strong>2. Последний заказ из Китая — что это было?</strong></p><p>Чехол и аксессуары для телефона.</p><p><strong>3. Когда вы поняли, что товар из Китая?</strong></p><p>В карточке видел, но это было не особо заметно.</p><p><strong>4. Это было ожидаемо?</strong></p><p>Скорее да, но не уверен, что все это заметят.</p><p><strong>5. Как вы поняли срок доставки?</strong></p><p>Как ориентир, но слишком оптимистичный.</p><p><strong>6. Это обещание или ориентир?</strong></p><p>Для меня — ориентир. Но выглядит как обещание.</p><p><strong>7. Планировали ли вы что-то под этот срок?</strong></p><p>Нет, я сразу закладывал задержку.</p><p><strong>8. Как вы следили за заказом?</strong></p><p>Смотрел статусы, но они малоинформативные.</p><p><strong>9. Был момент, когда вы перестали понимать ситуацию?</strong></p><p>Да, на этапе таможни — вообще непонятно, сколько это займёт.</p><p><strong>10. Была ли задержка?</strong></p><p>Да, дней на десять.</p><p><strong>11. Кто виноват?</strong></p><p>Формально логистика, но ответственность всё равно на Ozon.</p><p><strong>12. Что должно измениться?</strong></p><p>Диапазон сроков и нормальное объяснение этапов доставки.</p></div></details></div></details><details class="accordion"><summary>Опрос <span>⌄</span></summary><div class="content"><p>14 респондентов · прокручивайте таблицу горизонтально, чтобы посмотреть все ответы.</p><div class="table-scroll"><table><tr><th>Респондент</th><th>Заказывали ли вы товары с доставкой из Китая на Ozon?</th><th>Понимали ли вы в момент покупки, что товар доставляется из Китая?</th><th>Где вы узнали, что товар доставляется из Китая?</th><th>Насколько вы доверяли срокам доставки при оформлении заказа?</th><th>Как вы воспринимали указанный срок доставки?</th><th>Был ли заказ доставлен в срок?</th><th>Получали ли вы объяснение причины задержки?</th><th>Насколько задержка повлияла на доверие к Ozon?</th><th>Обращались ли вы в поддержку?</th><th>Помогло ли обращение в поддержку?</th><th>Готовы ли вы снова заказать товар из Китая на Ozon?</th><th>Что могло бы повысить готовность заказывать снова?</th><th>Что больше всего раздражало / разочаровало</th></tr><tr><td>R1</td><td>Да</td><td>Скорее нет</td><td>Уже после оформления</td><td>1</td><td>Как ориентировочную дату</td><td>С серьёзной задержкой</td><td>Нет</td><td>4</td><td>Нет</td><td>Не обращался(ась)</td><td>Да, но с осторожностью</td><td>Честные сроки; Трекинг</td><td>Сроки и позднее понимание</td></tr><tr><td>R2</td><td>Да</td><td>Скорее нет</td><td>Из-за задержки</td><td>4</td><td>Как максимальный срок</td><td>С серьёзной задержкой</td><td>Нет</td><td>3</td><td>Да</td><td>Только бот</td><td>Да, но с осторожностью</td><td>Честные сроки; Трекинг</td><td>Неясность доставки</td></tr><tr><td>R3</td><td>Да</td><td>Скорее да</td><td>При попытке отмены</td><td>5</td><td>Как максимальный срок</td><td>Небольшая задержка</td><td>Да, понятное</td><td>3</td><td>Да</td><td>Нет</td><td>Да, но с осторожностью</td><td>Честные сроки; Трекинг</td><td>Нет разделения товаров</td></tr><tr><td>R4</td><td>Да</td><td>Нет</td><td>Уже после оформления</td><td>2</td><td>Как конкретную дату</td><td>С серьёзной задержкой</td><td>Нет</td><td>4</td><td>Да</td><td>Только бот</td><td>Скорее нет</td><td>Диапазон сроков; Поддержка</td><td>Ощущение обмана</td></tr><tr><td>R5</td><td>Да</td><td>Скорее нет</td><td>В карточке, но не заметил</td><td>3</td><td>Как конкретную дату</td><td>Серьёзная задержка</td><td>Нет</td><td>4</td><td>Нет</td><td>—</td><td>Да, но с осторожностью</td><td>Чёткое обозначение Китая</td><td>Непрозрачность</td></tr><tr><td>R6</td><td>Да</td><td>Нет</td><td>После оплаты</td><td>2</td><td>Как дату доставки</td><td>Серьёзная задержка</td><td>Нет</td><td>5</td><td>Да</td><td>Оператор частично помог</td><td>Скорее нет</td><td>Живая поддержка</td><td>Полное отсутствие объяснений</td></tr><tr><td>R7</td><td>Да</td><td>Скорее нет</td><td>Из статуса заказа</td><td>3</td><td>Как гарантию</td><td>Небольшая задержка</td><td>Нет</td><td>3</td><td>Да</td><td>Только бот</td><td>Да, но с осторожностью</td><td>Диапазон сроков</td><td>Бот вместо человека</td></tr><tr><td>R8</td><td>Да</td><td>Нет</td><td>После жалобы</td><td>1</td><td>Как точную дату</td><td>Серьёзная задержка</td><td>Нет</td><td>5</td><td>Да</td><td>Не помогло</td><td>Нет</td><td>Честные ожидания</td><td>Потеря доверия</td></tr><tr><td>R9</td><td>Да</td><td>Скорее нет</td><td>Уже после заказа</td><td>3</td><td>Как дату</td><td>Серьёзная задержка</td><td>Нет</td><td>4</td><td>Нет</td><td>—</td><td>Да, но с осторожностью</td><td>Трекинг этапов</td><td>Неясно, где товар</td></tr><tr><td>R10</td><td>Да</td><td>Скорее да</td><td>В карточке товара</td><td>4</td><td>Как максимальный срок</td><td>Небольшая задержка</td><td>Да, но формальное</td><td>2</td><td>Да</td><td>Частично</td><td>Да</td><td>Детальные статусы</td><td>Недостаток информации</td></tr><tr><td>R11</td><td>Да</td><td>Нет</td><td>После оформления</td><td>2</td><td>Как гарантию</td><td>Серьёзная задержка</td><td>Нет</td><td>4</td><td>Да</td><td>Только бот</td><td>Скорее нет</td><td>Живой оператор</td><td>Чувство беспомощности</td></tr><tr><td>R12</td><td>Да</td><td>Скорее нет</td><td>Из-за переноса сроков</td><td>3</td><td>Как дату</td><td>Небольшая задержка</td><td>Нет</td><td>3</td><td>Нет</td><td>—</td><td>Да, но с осторожностью</td><td>Диапазон сроков</td><td>Не объяснили причину</td></tr><tr><td>R13</td><td>Да</td><td>Нет</td><td>После оплаты</td><td>2</td><td>Как точную дату</td><td>Серьёзная задержка</td><td>Нет</td><td>4</td><td>Да</td><td>Не помогло</td><td>Скорее нет</td><td>Чёткое разделение товаров</td><td>«Ozon подвёл»</td></tr><tr><td>R14</td><td>Да</td><td>Скорее нет</td><td>Уже после заказа</td><td>3</td><td>Как гарантию</td><td>Серьёзная задержка</td><td>Нет</td><td>4</td><td>Да</td><td>Оператор помог эмоционально</td><td>Да, но с осторожностью</td><td>Поддержка + объяснения</td><td>Нет человеческого ответа</td></tr></table></div></div></details><p>Для проверки гипотез использовалась комбинация глубинных и количественных методов, направленных на выявление разрыва ожиданий и причин потери доверия при заказах из Китая.</p>
+
+<h3>Результаты валидации</h3>
+<p><img alt="Поля+ввода.png" src="/projects/global-case/research-fields.png"/></p>
+
+<h3>Вывод по валидации</h3>
+<blockquote>
+<p>Валидация показала, что ключевая проблема Ozon Global связана не с длительностью международной доставки, а с управлением ожиданиями пользователя.
+Позднее осознание международного заказа, фиксированные сроки и отсутствие объяснений при задержках формируют ощущение обмана и переносят ответственность на платформу, снижая доверие и вероятность повторных покупок.</p>
+</blockquote>
+
+</section><section class="global-section"><h2>Проектирование</h2>
+<h3>Первая итерация</h3>
+<p>Изучив референсы и поставив себя на место пользователя, спроектировал первые макеты, провел тестирование.</p>
+<p><img alt="Ozon+Global+1+итерация.png" src="/projects/global-case/iteration-1.png"/></p>
+<h4>Выводы</h4>
+<ol>
+<li><p>Не все респонденты замечали надпись «Из-за рубежа» на экране с выбором товара.</p>
+</li>
+<li><p>Модальный экран с предупреждением скорее отталкивал пользователей и в будущем может срывать процесс оплаты.</p>
+</li>
+<li><p>Все респонденты заметили информацию внутри кнопки о доставке из-за рубежа.</p>
+</li>
+</ol>
+<h3>Вторая итерация</h3>
+<p>Переработал карточку товара, перенёс надпись «Из-за рубежа», убрал модальное окно.</p>
+<p><img alt="Ozon+Global+2+итерация.png" src="/projects/global-case/iteration-2.png"/></p>
+<h3>Ключевые UX-решения</h3><div class="global-accordions"><details class="global-accordion"><summary>1. Раннее обозначение международного заказа<span class="global-chevron">⌄</span></summary><div class="global-accordion-body"><p>Метка «Из-за рубежа» вынесена:</p>
+<ul><li>в карточку товара,</li><li>в список товаров,</li><li>в корзину,</li><li>на экран оформления заказа.</li></ul>
+<p>Это снижает эффект неожиданности и позволяет пользователю принять осознанное решение ещё до оплаты.</p>
+</div></details><details class="global-accordion"><summary>2. Прозрачные сроки доставки<span class="global-chevron">⌄</span></summary><div class="global-accordion-body"><p>Вместо восприятия срока как обещания:</p>
+<ul><li>сроки визуально подаются как <strong>диапазон</strong>;</li><li>подчёркивается зависимость от международной логистики;</li><li>срок сопровождается поясняющим текстом.</li></ul>
+<p>Цель — сместить восприятие с «гарантии» на «ожидание с рисками».</p>
+</div></details><details class="global-accordion"><summary>3. Последовательное подтверждение контекста<span class="global-chevron">⌄</span></summary><div class="global-accordion-body"><p>На этапах:</p>
+<ul><li>карточка товара,</li><li>корзина,</li><li>оформление заказа,</li></ul>
+<p>пользователь <strong>несколько раз видит подтверждение</strong>, что товар доставляется из-за рубежа.</p>
+<p>Это снижает вероятность когнитивного разрыва и будущего негатива.</p>
+</div></details><details class="global-accordion"><summary>4. Снижение тревожности на этапе оплаты<span class="global-chevron">⌄</span></summary><div class="global-accordion-body"><p>Перед оплатой пользователь:</p>
+<ul><li>явно видит, что заказ международный;</li><li>понимает, что сроки могут измениться;</li><li>принимает решение осознанно.</li></ul>
+<p>Таким образом, ответственность за выбор частично возвращается пользователю, без ощущения «обмана со стороны сервиса».</p>
+</div></details><details class="global-accordion"><summary>5. Сохранение привычных паттернов Ozon<span class="global-chevron">⌄</span></summary><div class="global-accordion-body"><p>Все решения:</p>
+<ul><li>встроены в существующие экраны;</li><li>используют знакомые компоненты;</li><li>не требуют обучения.</li></ul>
+<p>Это снижает когнитивную нагрузку и риск отторжения изменений.</p>
+</div></details></div><h3>Как выглядят экраны сейчас:</h3>
+<p><img alt="Экраны+старые.png" src="/projects/global-case/screens-before.png"/></p>
+<h3>Решение:</h3>
+<p><img alt="Экраны+новые.png" src="/projects/global-case/screens-after.png"/></p>
+<h3>Типографика</h3>
+<p><img alt="Типографика+и+палитра.png" src="/projects/global-case/typography-palette.png"/></p>
+<h3>Ui kit</h3>
+<p><img alt="Ui+Kit.png" src="/projects/global-case/Ui+Kit.png"/></p>
+
+</section><section class="global-section"><h2>Саммари</h2>
+<p>В рамках концепт-проекта Ozon Global я исследовал проблему потери доверия пользователей при заказах из Китая и выявил, что ключевой негатив возникает из-за некорректно сформированных ожиданий, а не из-за сроков доставки как таковых.
+На основе исследований и анализа конкурентов я спроектировал обновлённый пользовательский флоу и интерфейсные решения, направленные на раннее осознание международной доставки, прозрачный трекинг этапов и понятную коммуникацию при задержках, что снижает тревожность пользователей и количество обращений в поддержку.</p>
+</section></div><div aria-label="Просмотр скриншота" class="global-lightbox" role="dialog"><button aria-label="Закрыть" class="close">×</button><button aria-label="Предыдущий" class="prev">‹</button><img alt="Увеличенный экран конкурента"/><button aria-label="Следующий" class="next">›</button><span class="counter"></span></div>

@@ -1,0 +1,1661 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&display=swap");
+/* Konstantin Chirkov — Product Designer
+   Figma: Workspace / homepage-cases, homepage-visual, case — AdTech */
+
+:root {
+  --bg: #ffffff;
+  --ink: #1e1e1e;
+  --ink-soft: #949aa4;
+  --surface: #f3f4f5;
+  --line: #e5e5e5;
+  --tag-line: #e5e5e8;
+  /* единственный цвет на сайте — им помечен переключатель языка, чтобы его
+     находили глазами в монохромной шапке */
+  --lang: #fb7660;
+  --radius-pill: 40px;
+  /* 40 — значение из макета при контенте 1160; ниже радиус тает пропорционально
+     ширине экрана, чтобы доля скругления оставалась ≈3.5% на любом размере */
+  --radius-card: clamp(16px, 3.45vw, 40px);
+  --radius-shot: clamp(8px, 1.04vw, 12px);
+  color-scheme: light;
+  font-synthesis: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Roboto", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+/* ---------- Topbar ---------- */
+
+/* Шапка физически выше, чем видно на экране: 300px сверху — её собственный
+   padding, залитый фоном. Отрицательный margin вынимает эту зону из потока,
+   а top: -300 компенсирует её при залипании, так что видимая строка встаёт
+   ровно на ноль. Нужно это для встроенных браузеров (Telegram): там вебвью
+   отдаёт верхнюю полосу под свою панель, контент в ней продолжает
+   прокручиваться, и всё, что залипший элемент рисует за пределами своей
+   коробки, WebKit отсекает. Внутри коробки — не отсекает. */
+.topbar {
+  position: sticky;
+  top: -300px;
+  z-index: 30;
+  margin-top: -300px;
+  padding-top: 300px;
+  background: var(--bg);
+}
+
+/* Полоса прогресса чтения кейса: ширина растёт вместе со скроллом страницы,
+   от 0 до 100vw (см. case.js). Отдельный элемент перед .topbar, а не его
+   потомок — если положить внутрь, она попадёт в ту же коробку залипания и
+   рискует упереться в WebKit-обрезку, описанную в комментарии выше.
+   z-index выше топбара, иначе прячется под его непрозрачным фоном. */
+.case__progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: var(--ink);
+  /* скругление только с растущей стороны (справа) — у левого края экрана
+     полоса всегда стоит впритык, скруглять там нечего */
+  border-radius: 0 4px 4px 0;
+  z-index: 31;
+  pointer-events: none;
+}
+
+/* на десктопе обёртка прозрачна для флекса — пилюли остаются детьми .pillnav */
+.pillnav__contacts {
+  display: contents;
+}
+
+.topbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 72px;
+  padding: 16px 30px;
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.brandmark {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 40px;
+  color: var(--ink);
+}
+
+.brandmark__ava {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  flex: none;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+/* crop matches the photo framing in Figma (node 83:1076) */
+.brandmark__ava img {
+  position: absolute;
+  left: -24.12%;
+  top: -32.97%;
+  width: 149.51%;
+  height: 149.51%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.brandmark__name {
+  font-size: 17px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.pillnav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  /* без этого автоматический минимальный размер флекс-элемента не даёт строке
+     сжаться, и она вылезает за правый край вместо того, чтобы ужать кнопку */
+  min-width: 0;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  padding: 0 14px;
+  border-radius: var(--radius-pill);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--ink);
+  white-space: nowrap;
+  transition: background-color 0.15s ease, opacity 0.15s ease;
+}
+
+@media (hover: hover) {
+  .pill:hover {
+    background: var(--surface);
+  }
+}
+
+.pill--dark {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+/* background здесь не дубликат: он перебивает .pill:hover, который красит
+   любую пилюлю в светлый, — без него тёмная кнопка на ховере светлеет */
+@media (hover: hover) {
+  .pill--dark:hover {
+    background: var(--ink);
+    opacity: 0.85;
+  }
+}
+
+/* Переключатель языка. Показывает язык, на котором читатель находится сейчас,
+   а ведёт на страницу-близнеца в другом языке — тот же кейс или та же главная.
+   Ховер серый, как у остальных пилюль (и только на устройствах с мышью);
+   состояния нажатия нет намеренно — страница меняется мгновенно. */
+.pill--lang {
+  color: var(--lang);
+}
+
+/* Кнопка резюме — единственная в шапке, у кого подпись длинная, поэтому в
+   тесноте ужимается именно она: min-width: 0 разрешает флексу сжать её ниже
+   ширины текста, а подпись обрезается многоточием («Скачать рез…»). Остальные
+   элементы строки (аватар, язык, бургер) не сжимаются вовсе. Отдельный порог
+   не нужен: обрезка включается ровно там, где перестаёт хватать места. Полная
+   строка требует 16 + 40 + 16 + 46 + 8 + 138 + 8 + 40 + 16 = 328px, поэтому
+   с 328 подпись целая, а ниже (320 — самый ходовой такой экран) ужимается. */
+.pill--cv {
+  min-width: 0;
+}
+
+.pill--cv span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* icon only, no menu behind it yet */
+.burger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex: none;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  cursor: pointer;
+}
+
+/* только для мыши: на тапе :hover залипает и серый круг остаётся под крестиком */
+@media (hover: hover) {
+  .burger:hover {
+    background: var(--surface);
+  }
+}
+
+.burger img {
+  width: 24px;
+  height: 24px;
+}
+
+/* крестик показываем только в открытом состоянии */
+.burger__close,
+.topbar.is-open .burger__open {
+  display: none;
+}
+
+.topbar.is-open .burger__close {
+  display: block;
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding: 40px 40px 0;
+  text-align: center;
+}
+
+.hero__title {
+  max-width: 850px;
+  margin: 0 auto;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 36px;
+  color: var(--ink);
+}
+
+.hero__sub {
+  font-weight: 400;
+  color: var(--ink-soft);
+}
+
+/* ---------- Tabs ---------- */
+
+/* контент 1160: карточки 568 + 24 + 568 */
+.shell {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.tabs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 206px;
+  margin: 0 auto 40px;
+  padding: 3px;
+  background: var(--surface);
+  border-radius: 24px;
+}
+
+.tabs__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 32px;
+  padding: 0 8px;
+  border: 1px solid transparent;
+  border-radius: 25px;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.tabs__btn[aria-selected="true"] {
+  background: var(--bg);
+  border-color: var(--line);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* ---------- Grid (shared by both tabs) ---------- */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.grid[hidden] {
+  display: none;
+}
+
+.card--wide,
+.tile--wide {
+  grid-column: 1 / -1;
+}
+
+
+/* ---------- Case card ---------- */
+
+/* Пропорции карточки из макета: обычная 568x580, широкая 1160x580. Держим их
+   через aspect-ratio, а не фиксированной высотой: арт внутри позиционируется
+   процентами от ШИРИНЫ карточки, и при жёсткой высоте на промежуточных экранах
+   (900-1240) картинка перестаёт доставать до низа — становится виден её край с
+   запечённой тенью. С пропорцией кроп везде такой же, как в макете. */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  aspect-ratio: 568 / 580;
+  overflow: hidden;
+  background: var(--surface);
+  border-radius: var(--radius-card);
+  color: inherit;
+  transition: box-shadow 0.15s ease;
+}
+
+/* Внутренняя тень из макета. Мокап подрезан краем карточки, и по нижнему
+   краю идёт лёгкое затемнение — три слоя по 1% чёрного, ровно как в Figma
+   (там же есть ещё два слоя с alpha 0, они ничего не рисуют, поэтому их нет).
+   Рисуем оверлеем, а не box-shadow на самой карточке: inset-тень элемента
+   ложится под его же детей, то есть ушла бы под мокап. */
+.card::after,
+.tile::after,
+.callout__inner::after,
+.reco__inner::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow:
+    inset 0 -1px 1px rgba(0, 0, 0, 0.01),
+    inset -1px -3px 3px rgba(0, 0, 0, 0.01),
+    inset -2px -6px 4px rgba(0, 0, 0, 0.01);
+}
+
+/* объявляем после .card: специфичность та же, побеждает порядок */
+.card--wide {
+  aspect-ratio: 1160 / 580;
+}
+
+/* Обводка та же, что у шапки. Не border, а внутренняя тень — иначе рамка съедает
+   пиксель по кругу и на ховере перевёрстывается текст внутри карточки. */
+@media (hover: hover) {
+  /* Draw the hover stroke above the artwork, across the entire card. */
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    border: 1px solid transparent;
+    border-radius: inherit;
+    pointer-events: none;
+    transition: border-color 0.15s ease;
+  }
+
+  .card:hover::before {
+    border-color: var(--line);
+  }
+}
+
+/* ---------- Курсор «Открыть» над карточками ---------- */
+
+/* без медиа-запроса элемент не должен показываться вообще */
+.cursor {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  /* класс вешает скрипт — если он не загрузился, остаётся обычная стрелка */
+  .has-cursor .card {
+    cursor: none;
+  }
+
+  .cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 40;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: rgba(30, 30, 30, 0.3);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: var(--bg);
+    font-size: 11px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    /* позицию задаёт transform из скрипта, поэтому масштаб — отдельным свойством */
+    scale: 0.6;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease, scale 0.18s ease;
+  }
+
+  .cursor.is-on {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+/* арт в макете заходит под текст, а в экспорте у него непрозрачный фон карточки —
+   поэтому шапку кладём поверх */
+.card__head {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 40px 40px 0;
+}
+
+/* колонка шапки: текст и теги, между ними 8 из макета */
+.card__body {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Теги кейса. Из макета: высота 32, паддинги 0/12, радиус 8, рамка 1px,
+   Roboto Medium 14, зазор в ряду 4. В макете ряд не переносится, но на узком
+   экране пять тегов в строку не помещаются — разрешаем перенос.
+   Заливка зависит от подложки: на серой карточке превью чип белый, на белой
+   странице кейса — серый. */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tags li {
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  padding: 0 12px;
+  border: 1px solid var(--tag-line);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.card__tags li {
+  background: var(--bg);
+}
+
+/* .case ul задаёт отступ и маркеры для маркированных списков и перебивает
+   одноклассовые правила тегов — поэтому колонку задаём двухклассовым селектором */
+.case .case__tags {
+  padding: 0 12.5%;
+  list-style: none;
+}
+
+/* Карточки в ленте «Других кейсов» лежат внутри .case, поэтому их ряд тегов
+   тоже ловит .case ul и уезжает вправо от заголовка. Сбрасываем. */
+.case .card__tags {
+  padding: 0;
+  list-style: none;
+}
+
+/* .case li задаёт списочную типографику 17/32 и перебивает .tags li той же
+   специфичностью, но ниже по файлу — поэтому здесь двухклассовый селектор */
+.case .case__tags li {
+  background: var(--surface);
+  font-size: 14px;
+  line-height: 1;
+  letter-spacing: normal;
+}
+
+/* не flex: иначе на узком экране «NDA» отрывается от переносящегося заголовка */
+.card__title {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 24px;
+  color: var(--ink);
+}
+
+/* Единый размер иконок проектов: 24px при тексте 17px. */
+.card__title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.card__logo {
+  display: block;
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  margin: 0;
+  border-radius: 4px;
+  object-fit: contain;
+}
+
+.card__desc {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 24px;
+  color: var(--ink-soft);
+}
+
+.card__go {
+  flex: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-pill);
+  background: #ffffff;
+  border: 1px solid var(--line);
+}
+
+.card__go img {
+  width: 20px;
+  height: 20px;
+}
+
+/* Арт лежит в карточке по координатам из макета и подрезается её краями,
+   поэтому он абсолютный, а не вписан в блок. Проценты — от размеров карточки. */
+.card__art {
+  position: absolute;
+  height: auto;
+  pointer-events: none;
+}
+
+/* <picture> нужен только чтобы подменить источник на узком экране —
+   в раскладке его быть не должно. */
+.card picture {
+  display: contents;
+}
+
+/* подрезан левым краем карточки, справа добавляет тень графика */
+.card__art--adtech {
+  left: 0;
+  top: 24.919%;
+  width: 94.366%;
+}
+
+/* подрезан обоими краями — ровно по ширине карточки */
+/* В ленте «Других кейсов» у фитнеса своя посадка: шапка там другой высоты,
+   а в самой картинке сверху пустое поле — телефоны начинаются ниже. */
+.card__art--more-fitness {
+  left: 0;
+  top: 23.103%;
+  width: 100%;
+}
+
+/* v1.1: арт опустился с 94 до 112 — шапка выросла на ряд тегов */
+.card__art--fitness {
+  left: 0;
+  top: 19.31%;
+  width: 100%;
+}
+
+/* v1.1: шапка карточки выросла на ряд тегов, поэтому арт опустился со
+   22.931% до 27.241%. Экспорт шире узла на вылет тени — отсюда сдвиг влево. */
+.card__art--hr {
+  left: 5.393%;
+  top: 26.897%;
+  width: 89.253%;
+}
+
+/* В «Других кейсах» карточка узкая (568), поэтому у HR и Kommo там свой арт
+   со своей геометрией — не уменьшенная копия обложки с главной. */
+.card__art--more-hr {
+  left: 6.627%;
+  top: 32.143%;
+  width: 93.373%;
+}
+
+/* v1.1: шапка ленты выросла на ряд тегов и лишилась стрелки — 158px */
+.card__art--more-kommo {
+  left: 7.042%;
+  top: 31.676%;
+  width: 92.958%;
+}
+
+/* Одна картинка на панель и подсказку разом. Двумя слоями нельзя: у экспорта
+   подсказки серый фон запечён непрозрачным и перекрывал белую панель под ней. */
+/* v1.1: арт опустился со 141 до 156 — шапка выросла на ряд тегов */
+.card__art--kommo {
+  left: 16.735%;
+  top: 26.609%;
+  width: 62.816%;
+}
+
+/* ---------- Visual tile ---------- */
+
+.tile {
+  position: relative;
+  aspect-ratio: 568 / 580;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+}
+
+.tile--wide {
+  aspect-ratio: 1160 / 580;
+}
+
+.tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ---------- Footer ---------- */
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  padding: 0 20px 40px;
+  text-align: center;
+}
+
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.footer__copy {
+  margin: 0;
+  font-size: 17px;
+  line-height: 20px;
+  color: var(--ink-soft);
+}
+
+/* =========================================================
+   Case study page — Figma: "case — AdTech" (117:2)
+   Every block sits in a 40px vertical rhythm.
+   ========================================================= */
+
+.case {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+/* текстовая колонка: 150 из 1200 по макету = 12.5% */
+.case__lead,
+.case__tags,
+.case__meta,
+.case__brief,
+.case__section,
+.case__more-head {
+  padding: 0 12.5%;
+}
+
+.case > .case__lead {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 36px;
+  color: var(--ink);
+}
+
+/* приглушённая часть лида — «ранее amoCRM» в макете серая */
+.case__lead .muted {
+  color: var(--ink-soft);
+}
+
+.case__meta {
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  font-size: 17px;
+  line-height: 32px;
+}
+
+.case__meta > div,
+.case__meta-pair > div {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.case__meta dt {
+  color: var(--ink-soft);
+}
+
+.case__meta dd {
+  margin: 0;
+  color: var(--ink);
+}
+
+/* the two right-hand columns share one half of the row */
+.case__meta-pair {
+  display: flex;
+  gap: 40px;
+}
+
+.case__brief {
+  display: flex;
+  gap: 40px;
+}
+
+.case__brief > div {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.case__section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* абзацы внутри одного блока идут через 16, а не через 20 */
+.case__text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.case h2 {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 36px;
+  color: var(--ink);
+}
+
+/* подзаголовок внутри раздела */
+.case h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  color: var(--ink);
+}
+
+/* Kommo: раздел собран из подсекций — 24 до подзаголовка, 16 от него до текста */
+.case--kommo .case__section {
+  gap: 16px;
+}
+
+.case--kommo .case__section h3 {
+  margin-top: 8px;
+}
+
+.case ul {
+  margin: 0;
+  padding-left: 25.5px;
+  list-style: disc;
+}
+
+/* нумерованный список — только в блоке «Инсайт», тезисы там пронумерованы */
+.case ol {
+  margin: 0;
+  padding-left: 25.5px;
+  list-style: decimal;
+}
+
+.case li {
+  font-size: 17px;
+  line-height: 32px;
+  letter-spacing: 0.017px;
+  color: var(--ink);
+}
+
+.case p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 32px;
+  letter-spacing: 0.017px;
+  color: var(--ink);
+}
+
+/* Карточки в «Других кейсах» лежат внутри .case, а их заголовок и описание —
+   это <p>. Правило .case p выше (0-1-1) перебивает одноклассовые .card__title
+   и .card__desc (0-1-0), поэтому описание получалось чёрным вместо серого, а
+   строки — 32px вместо 24. Возвращаем карточкам их собственную типографику:
+   она должна быть той же, что у карточек на главной. */
+.case .card__title,
+.case .card__desc {
+  line-height: 24px;
+  letter-spacing: normal;
+}
+
+.case .card__desc {
+  color: var(--ink-soft);
+}
+
+.case b {
+  font-weight: 700;
+}
+
+/* ---------- Карточка-вывод и карточка рекомендации ---------- */
+
+/* Оба блока живут по сетке скриншотов (120 из 1200 = 10%), а не текста:
+   в макете они той же ширины, что и картинки кейса. */
+.callout,
+.reco {
+  padding: 0 10%;
+}
+
+/* Общая коробка: серая плашка со скруглением карточки. overflow скрывает то,
+   что вылезает за край, — в макете и лампочка, и письмо намеренно обрезаны. */
+.callout__inner,
+.reco__inner {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  background: var(--surface);
+  border-radius: var(--radius-card);
+}
+
+.callout__inner {
+  align-items: center;
+  min-height: 280px;
+  padding: 0 40px 0 380px;
+}
+
+/* 350 из макета, из них 70 свисают за нижний край и режутся. Позиционируется
+   абсолютно: в потоке картинка выше плашки и растянула бы её до 342. */
+.callout__art {
+  position: absolute;
+  top: -8px;
+  left: 30px;
+  width: 350px;
+  height: 350px;
+}
+
+/* .case-префикс обязателен: оба блока лежат внутри .case, и правило .case p
+   (17px) перебивает одноклассовый селектор по специфичности.
+   430 — ширина текстового блока в макете: фраза намеренно ломается на две
+   строки, без ограничения она вытягивается в одну и теряет ритм */
+.case .callout__text {
+  max-width: 430px;
+  margin: 0;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 36px;
+  color: var(--ink);
+}
+
+.reco__inner {
+  align-items: center;
+  min-height: 280px;
+  padding: 40px;
+}
+
+/* 400 держит перенос после «руководителя» — в макете заголовок в две строки */
+.reco__text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 400px;
+}
+
+.case .reco__title {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 36px;
+  color: var(--ink);
+}
+
+/* Письмо стоит не по правому краю, а с отбивкой 118 — как в макете,
+   поэтому позиционируется абсолютно, а не флексом. Тень многослойная
+   без размытия: это стопка страниц, а не мягкое падение. */
+.reco__shot {
+  position: absolute;
+  top: 50px;
+  right: 118px;
+  width: 296px;
+  border-radius: 12px;
+  box-shadow:
+    5.62px 5.62px 0 rgba(45, 92, 243, 0.4),
+    11.24px 11.24px 0 rgba(45, 92, 243, 0.3),
+    16.86px 16.86px 0 rgba(45, 92, 243, 0.2),
+    22.48px 22.48px 0 rgba(45, 92, 243, 0.1),
+    28.1px 28.1px 0 rgba(45, 92, 243, 0.05);
+}
+
+/* Надзаголовок-рубрика над h2 («UX/UI-дизайн» в AdTech). 17px, как основной
+   текст, но капсом и приглушённый — в макете это отдельная строка над разделом. */
+/* .case p (0-1-1) перебивает одноклассовую рубрику, поэтому селектор двойной.
+   Значения из макета: 17/32, серый, трекинг 0.1%, текст набран капсом вручную. */
+.case .case__eyebrow {
+  margin: 0;
+  font-size: 17px;
+  line-height: 32px;
+  letter-spacing: 0.017px;
+  color: var(--ink-soft);
+}
+
+/* Внутренняя тень на изображениях: три слоя по 1% чёрного из макета. Кладём её
+   отдельным слоем поверх картинки — на <img> inset-тень не рисуется вовсе. */
+.shot__inset {
+  position: relative;
+  display: block;
+  width: 100%;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+}
+
+.shot__inset::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow:
+    inset 0 -1px 1px rgba(0, 0, 0, 0.01),
+    inset -1px -3px 3px rgba(0, 0, 0, 0.01),
+    inset -2px -6px 4px rgba(0, 0, 0, 0.01);
+}
+
+.shot__inset img {
+  width: 100%;
+  border-radius: inherit;
+}
+
+/* ---------- Screenshot figure ---------- */
+
+/* блок со скрином: 120 из 1200 по макету = 10% */
+.shot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  padding: 0 10%;
+}
+
+/* картинка уже содержит серую подложку — своей рамки не рисуем */
+.shot--bare {
+  gap: 20px;
+}
+
+.shot--bare img {
+  width: 100%;
+  border-radius: var(--radius-card);
+}
+
+/* в макете AdTech подпись стоит ближе — 16 вместо 20 */
+.shot--tight {
+  gap: 16px;
+}
+
+.shot figcaption {
+  font-size: 17px;
+  line-height: 32px;
+  color: var(--ink-soft);
+  text-align: center;
+}
+
+/* ---------- Other cases ---------- */
+
+.case__more {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.case__more-row {
+  position: relative;
+  padding: 0 10%;
+}
+
+/* лента режется краем контейнера, поэтому сам отрез скруглён — иначе у карточки,
+   которая уходит за границу, получается прямой срез */
+.case__more-scroller {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  border-radius: var(--radius-card);
+  /* proximity, а не mandatory: mandatory отменяет плавную прокрутку по кнопкам */
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+}
+
+.case__more-scroller::-webkit-scrollbar {
+  display: none;
+}
+
+.case__more-scroller .card {
+  flex: none;
+  width: 568px;
+  aspect-ratio: 568 / 580;
+  scroll-snap-align: start;
+}
+
+/* кнопки листания сидят центром ровно на границе ленты */
+.case__more-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--ink);
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+
+.case__more-nav[hidden] {
+  display: none;
+}
+
+@media (hover: hover) {
+  .case__more-nav:hover {
+    opacity: 0.85;
+  }
+}
+
+.case__more-nav--next {
+  right: calc(10% - 32px);
+}
+
+.case__more-nav--prev {
+  left: calc(10% - 32px);
+}
+
+/* тёмная кнопка — иконку инвертируем в белую */
+.case__more-nav img {
+  width: 20px;
+  height: 20px;
+  filter: invert(1);
+}
+
+/* «назад» — та же иконка, отражённая */
+.case__more-nav--prev img {
+  transform: scaleX(-1);
+}
+
+/* ---------- Responsive ---------- */
+
+/* Один брейкпоинт на всё: сетка, шапка и типографика переключаются вместе */
+@media (max-width: 1023px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .card--wide,
+  .tile--wide {
+    grid-column: auto;
+  }
+  /* на телефоне арт уходит в поток и высота карточки определяется контентом —
+     пропорция из макета здесь только мешала бы */
+  .card,
+  .card--wide,
+  .case__more-scroller .card {
+    aspect-ratio: auto;
+    min-height: 0;
+  }
+  /* В одну колонку выравнивать плитки по общей высоте не нужно, а вреда от этого
+     много: широкие визуалы (3480×1740) в коробке 398×300 масштабируются
+     object-fit: cover до 600px по ширине, и по 101px с каждой стороны уезжает
+     за края — держится это только на overflow: hidden. iOS Safari такой клип
+     у cover-картинки под скруглённым родителем теряет, и панорама вылезает
+     поверх страницы за края экрана. Отдаём плитке высоту самой картинки:
+     обрезать становится нечего, и на телефоне видно весь визуал, а не полосу
+     из центра. */
+  .tile,
+  .tile--wide {
+    aspect-ratio: auto;
+    min-height: 0;
+  }
+  .tile img {
+    height: auto;
+  }
+
+  /* Координаты из макета осмысленны только на десктопе: на узком экране шапка
+     вырастает с двух строк до пяти и арт наезжает на текст. Возвращаем в поток
+     и отбиваем скриншот интерфейса от краёв теми же 24, что у текста: иначе он
+     упирается в правый край и его срезает скругление карточки. Слева арт встаёт
+     на одну вертикаль с текстом, а справа и снизу намеренно выходит за карточку:
+     мокап остаётся крупным, а вместе с краями за обрез уезжает и запечённое
+     в PNG скругление. Верхний auto прижимает арт к низу — в ленте «Других
+     кейсов» карточки тянутся под самую высокую, и пустое место должно копиться
+     над мокапом, как в макете, а не под ним. */
+  .card__art {
+    position: static;
+    width: calc((100% - 24px) * 1.35);
+    max-width: none;
+    margin: auto 0 -12% 24px;
+  }
+  /* Обложки нарисованы во всю карточку, серый фон запечён прямо в PNG —
+     любой отступ читается стыком. Их оставляем во всю ширину и не прижимаем
+     к низу: телефоны и монитор должны стоять сразу под текстом. */
+  .card__art--adtech,
+  .card__art--fitness,
+  .card__art--more-fitness {
+    width: 100%;
+    margin: 0;
+  }
+  /* Карточки в ленте держим одной высоты — разная высота в ряду читается
+     рваной. Лишнее место отдаём не одному краю, а обоим сразу: верхний и
+     нижний auto делят его поровну, и мокап встаёт по центру пустой области
+     под текстом, а не прилипает к шапке или к нижнему краю. */
+  .case__more-scroller .card__art {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+  /* шапка: контакты уезжают в футер, остаются резюме и бургер */
+  .topbar__inner {
+    padding: 16px;
+  }
+  .brandmark__name {
+    display: none;
+  }
+  .pillnav {
+    gap: 8px;
+  }
+  .pillnav__contacts {
+    display: none;
+  }
+  .burger {
+    display: inline-flex;
+  }
+
+  /* Открытый бургер: контакты выезжают полосой под шапкой — те же пилюли,
+     что и на десктопе, просто в другом раскладе. Контент не сдвигается. */
+  .topbar.is-open .pillnav__contacts {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px 0;
+    padding: 0 11px 16px;
+    background: var(--bg);
+  }
+  /* Раньше полоса скроллилась и Linkedin уезжал за край, хотя место под текст
+     ещё было: пилюли несли по 14px падинга с каждой стороны и в сумме не
+     влезали. Отдаём каждой равную долю ширины и убираем падинги — подложки у
+     этих пилюль нет, видно только подпись, поэтому падинг тут не рисует
+     ничего, кроме переполнения. На 320 доля = 74px при самой длинной подписи
+     65px, так что не режется даже на самом узком экране. */
+  .topbar.is-open .pillnav__contacts .pill {
+    min-width: 0;
+    padding: 0;
+  }
+
+  .hero {
+    padding: 32px 20px 0;
+  }
+  .hero__title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .shell {
+    padding: 32px 16px;
+  }
+  .card__head {
+    padding: 28px 24px 0;
+  }
+
+  .case {
+    gap: 32px;
+    padding: 32px 16px;
+  }
+  .case .case__tags {
+    padding: 0;
+  }
+  .case__lead,
+  .case__meta,
+  .case__brief,
+  .case__section,
+  .case__more-head,
+  .shot,
+  .callout,
+  .reco,
+  .case__more-row {
+    padding: 0;
+  }
+
+  /* На узком экране обе карточки складываются в колонку: 350-я лампочка и
+     письмо в 296 рядом с текстом физически не помещаются. Картинки при этом
+     остаются подрезанными краем плашки — приём из макета сохраняется. */
+  .callout__inner,
+  .reco__inner {
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 0;
+    padding: 24px;
+  }
+  .callout__art {
+    position: static;
+    order: 2;
+    width: 200px;
+    height: 200px;
+    margin: 4px 0 -56px -16px;
+  }
+  /* те же 22/30, что у .case h2: это заголовочные фразы, а не подзаголовки */
+  .case .callout__text {
+    order: 1;
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .case .reco__title {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  /* на узком экране письмо крупнее относительно плашки и текст в нём начинает
+     читаться — поэтому показываем только шапку бланка, остальное срезаем */
+  .reco__shot {
+    position: static;
+    width: 180px;
+    margin: 24px 0 -176px;
+    align-self: center;
+  }
+  .case > .case__lead {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .case h2 {
+    font-size: 22px;
+    line-height: 30px;
+  }
+  .case p {
+    line-height: 28px;
+  }
+  .case__meta {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .case__meta-pair {
+    gap: 40px;
+  }
+  .case__brief {
+    flex-direction: column;
+    gap: 28px;
+  }
+  .shot__frame {
+    padding: 16px;
+  }
+  /* на телефоне листаем свайпом, кнопки только мешают */
+  .case__more-nav {
+    display: none;
+  }
+  .case__more-scroller .card {
+    width: 84%;
+    max-width: 568px;
+  }
+
+  .footer {
+    gap: 28px;
+    padding: 0 16px 32px;
+  }
+  .footer__nav {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 360px;
+    gap: 8px;
+  }
+  /* контакты — просто чёрный текст, без подложки */
+  .footer__nav .pill {
+    width: 100%;
+    background: transparent;
+    color: var(--ink);
+  }
+  /* резюме остаётся кнопкой, но по ширине контента, а не на всю строку */
+  .footer__nav .pill--dark {
+    width: auto;
+    align-self: center;
+    padding: 0 20px;
+    background: var(--ink);
+    color: var(--bg);
+  }
+}
+
+/* Планшетная полоса 601–1023: раскладка уже одноколоночная, но карточка тут
+   вдвое-втрое шире телефонной, и множитель 1.35 раздувал мокап до зума —
+   интерфейс на обложке читался крупнее реального. Оставляем тот же приём
+   (левый край по тексту, правый за обрез), но выпуск за карточку держим
+   на 12% её ширины, а не на 33%, как на телефоне. */
+@media (min-width: 601px) and (max-width: 1023px) {
+  .card__art {
+    width: calc((100% - 24px) * 1.125);
+  }
+  /* обложки во всю карточку множитель не касается: серый фон у них запечён
+     в картинку, любой выпуск за край показал бы её собственную границу */
+  .card__art--adtech,
+  .card__art--fitness,
+  .card__art--more-fitness {
+    width: 100%;
+  }
+}
+
+/* Portfolio adaptation: same reference measurements, own content/assets */
+.brandmark__ava{position:static;object-fit:cover;flex:none}
+.brandmark__name{font-size:16px;font-weight:500}
+.pill--disabled{opacity:.45;cursor:not-allowed}
+.hero__title{max-width:850px;margin:0 auto;font-size:25px;line-height:36px;font-weight:700;letter-spacing:normal}
+.hero__sub{font-weight:400}
+.card__art.portfolio-art{position:absolute;inset:auto 0 0 0;width:100%;height:65%;margin:0;overflow:hidden}
+.card__art.portfolio-art img{width:100%;height:100%;object-fit:contain;object-position:center bottom}
+.card--wide .card__art.portfolio-art{height:76%;left:12%;width:76%}
+.case__section{align-items:stretch}
+.case__notice{margin:0 12.5%;padding:22px 26px;border-radius:16px;background:#f3f4f5;color:#747983;font-size:15px;line-height:1.6}
+.case__more-scroller .card__art.portfolio-art{height:65%}
+.case__more-nav{display:none}
+@media(max-width:800px){.hero__title{font-size:22px;line-height:30px}.card--wide .card__art.portfolio-art{left:0;width:100%;height:66%}.case__notice{margin:0}}
+
+.case__block{display:flex;flex-direction:column;gap:40px}
+
+/* Migration case: source-faithful editorial layout */
+.migration-hero-cover{margin-top:24px;margin-bottom:64px}
+.migration-section{padding-top:62px;padding-bottom:8px}
+.migration-section h2{margin-bottom:0}
+.migration-subsection{padding-top:34px;padding-bottom:0}
+.migration-subsection h3{margin-bottom:0}
+.migration-copy{padding-top:12px;padding-bottom:0}
+.migration-copy .case__text{margin-top:0}
+.migration-copy p{margin:0 0 14px}
+.migration-copy ul,.migration-copy ol{margin:0 0 20px;padding-left:24px}
+.migration-copy li{margin-bottom:8px}
+.migration-copy blockquote{border-left:3px solid #d9dce3;padding-left:20px;color:#626873}
+.migration-shot{margin-top:32px;margin-bottom:24px}
+.migration-shot img,.migration-hero-cover img{width:100%;height:auto;display:block;border-radius:28px}
+@media(max-width:700px){.migration-section{padding-top:40px}.migration-shot img,.migration-hero-cover img{border-radius:18px}}
+
+/* Migration editorial rhythm fix: text paragraphs share one case__text wrapper. */
+.case--kommo:has(.migration-copy) { gap: 32px; }
+.case--kommo .migration-section { padding-top: 20px; padding-bottom: 0; }
+.case--kommo .migration-subsection { padding-top: 8px; padding-bottom: 0; }
+.case--kommo .migration-copy { padding-top: 0; padding-bottom: 0; }
+.case--kommo .migration-copy .case__text { gap: 16px; }
+.case--kommo .migration-copy p { margin: 0; }
+.case--kommo .migration-copy ul,
+.case--kommo .migration-copy ol { margin: 0; }
+.case--kommo .migration-copy blockquote p + p { margin-top: 16px; }
+.case--kommo .migration-shot { margin-top: 8px; margin-bottom: 8px; }
+.case--kommo .migration-hero-cover { margin-top: 8px; margin-bottom: 24px; }
+@media(max-width:700px){
+ .case--kommo .migration-section { padding-top: 8px; }
+ .case--kommo .migration-subsection { padding-top: 0; }
+}
+
+/* v11: responsive portfolio cards; icon sizes are defined above only. */
+.card__desc{overflow-wrap:anywhere}
+.card__art.portfolio-art img{object-fit:contain;object-position:center bottom}
+@media(max-width:1023px){
+ .card__art.portfolio-art,.card--wide .card__art.portfolio-art{position:relative;inset:auto;width:100%;height:auto;aspect-ratio:1.65;margin:0;overflow:hidden}
+ .card__art.portfolio-art img{object-fit:contain;object-position:center bottom}
+ .card__head{padding:28px 28px 0}
+}
+@media(max-width:600px){
+ .card__head{padding:24px 22px 0}
+ .card__art.portfolio-art,.card--wide .card__art.portfolio-art{aspect-ratio:1.35}
+ .card__desc{font-size:16px;line-height:23px}
+ .card__tags li{white-space:normal;height:auto;min-height:30px;padding-top:6px;padding-bottom:6px}
+}
+
+/* v15 — compact cards: artwork follows text instead of being pinned to the bottom.
+   Keep the same outer card proportions for each card type. */
+.grid > .card,
+.case__more-scroller .card {
+  gap: 0;
+}
+.grid > .card .card__head,
+.case__more-scroller .card .card__head {
+  flex: 0 0 auto;
+}
+.grid > .card .card__art.portfolio-art,
+.grid > .card.card--wide .card__art.portfolio-art,
+.case__more-scroller .card .card__art.portfolio-art {
+  position: relative;
+  inset: auto;
+  left: auto;
+  width: 100%;
+  height: auto;
+  flex: 1 1 0;
+  min-height: 0;
+  margin: 20px 0 0;
+  overflow: hidden;
+}
+.grid > .card .card__art.portfolio-art img,
+.case__more-scroller .card .card__art.portfolio-art img {
+  object-fit: contain;
+  object-position: center top;
+}
+@media (max-width: 1023px) {
+  .grid > .card,
+  .grid > .card.card--wide,
+  .case__more-scroller .card {
+    aspect-ratio: auto;
+  }
+  .grid > .card .card__art.portfolio-art,
+  .grid > .card.card--wide .card__art.portfolio-art,
+  .case__more-scroller .card .card__art.portfolio-art {
+    flex: none;
+    aspect-ratio: 1.65;
+    margin-top: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .grid > .card .card__art.portfolio-art,
+  .grid > .card.card--wide .card__art.portfolio-art,
+  .case__more-scroller .card .card__art.portfolio-art {
+    aspect-ratio: 1.35;
+    margin-top: 16px;
+  }
+}
+
+/* v16 — NDA is a status in the upper-right corner, never a tag. */
+.card__nda {
+  position: absolute;
+  z-index: 3;
+  top: 36px;
+  right: 40px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #E34242;
+  font-size: 17px;
+  line-height: 24px;
+  font-weight: 600;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.card__nda svg { width: 21px; height: 21px; display: block; flex: none; }
+.grid > .card:has(.card__nda) .card__head,
+.case__more-scroller .card:has(.card__nda) .card__head { padding-right: 138px; }
+@media (max-width: 800px) {
+ .card__nda { top: 25px; right: 28px; font-size: 15px; gap: 5px; }
+ .card__nda svg { width: 18px; height: 18px; }
+ .grid > .card:has(.card__nda) .card__head,
+ .case__more-scroller .card:has(.card__nda) .card__head { padding-right: 116px; }
+}
+@media (max-width: 440px) {
+ .card__nda { top: 19px; right: 18px; font-size: 13px; gap: 4px; }
+ .card__nda svg { width: 16px; height: 16px; }
+ .grid > .card:has(.card__nda) .card__head,
+ .case__more-scroller .card:has(.card__nda) .card__head { padding-right: 98px; }
+}
+
+/* v22: Ozon HR homepage cover — identical source and visual treatment at all widths.
+   The supplied PNG has an opaque near-white canvas. Multiply blends that canvas
+   into the card instead of showing a visible rectangular patch on desktop. */
+.grid > .card:first-child .card__art.portfolio-art img {
+  mix-blend-mode: multiply;
+  object-fit: contain;
+  object-position: center center;
+}
+
+/* v23 — one 16:9 artwork format across all four homepage islands.
+   No changes to the case pages or their related-project cards. */
+.grid > .card .card__art.portfolio-art {
+  margin-top: 20px;
+  background: transparent;
+}
+.grid > .card .card__art.portfolio-art img,
+.grid > .card:first-child .card__art.portfolio-art img {
+  object-fit: cover;
+  object-position: center center;
+  mix-blend-mode: normal;
+}
+@media (max-width: 1023px) {
+  .grid > .card .card__art.portfolio-art,
+  .grid > .card.card--wide .card__art.portfolio-art {
+    aspect-ratio: 16 / 9;
+  }
+}
+@media (max-width: 600px) {
+  .grid > .card .card__art.portfolio-art,
+  .grid > .card.card--wide .card__art.portfolio-art {
+    aspect-ratio: 16 / 9;
+    margin-top: 16px;
+  }
+}
+
+/* v28: homepage Ozon HR artwork only; preserve v23 card dimensions. */
+.grid > .card:first-child .card__art.portfolio-art { background: #F2F3F5; }
+.grid > .card:first-child .card__art.portfolio-art img { object-fit: contain; object-position: center center; }
+
+/* v29 — Taxi Maxim homepage artwork: fit the entire supplied 16:9 cover.
+   Keep all card dimensions and other artwork styles exactly as v28. */
+.grid > .card:nth-child(4) .card__art.portfolio-art {
+  background: #F2F3F5;
+}
+.grid > .card:nth-child(4) .card__art.portfolio-art img {
+  object-fit: contain;
+  object-position: center center;
+}
+
+/* v40 — Homepage Ozon HR: fill the entire image area beneath the text.
+   Scope only to the first homepage island; keep its dimensions and all other cards unchanged. */
+.grid > .card:first-child .card__art.portfolio-art {
+  margin-top: 0;
+}
+.grid > .card:first-child .card__art.portfolio-art img {
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Yoko Trade: case content only */
+.yoko-case{max-width:100%;padding-bottom:32px}
+.yoko-case>h1,.yoko-case>h2,.yoko-case>h3,.yoko-case>h4,.yoko-case>h5,.yoko-case>h6,.yoko-case>p,.yoko-case>ul,.yoko-case>ol,.yoko-case>table,.yoko-case>blockquote{max-width:850px;margin-left:auto;margin-right:auto}
+.yoko-case>h1{font-size:25px;line-height:1.4;margin-top:72px;margin-bottom:20px}
+.yoko-case>h2{font-size:25px;line-height:1.4;margin-top:68px;margin-bottom:20px}
+.yoko-case>h3{font-size:20px;line-height:1.4;margin-top:42px;margin-bottom:14px}
+.yoko-case>p,.yoko-case>ul,.yoko-case>ol{font-size:18px;line-height:1.7;margin-top:14px;margin-bottom:16px}
+.yoko-case li{margin:8px 0}.yoko-case hr{max-width:850px;margin:40px auto;border:0;border-top:1px solid #eceef0}
+.yoko-case img{display:block;max-width:100%;width:100%;height:auto;border-radius:16px}
+.yoko-case>p:has(>img){max-width:960px;margin:32px auto 40px}
+.yoko-case video{display:block;max-width:960px;width:100%;margin:32px auto;border-radius:16px}
+.yoko-case table{border-collapse:collapse;width:100%;font-size:15px;line-height:1.5;display:block;overflow-x:auto;margin-top:24px;margin-bottom:36px}
+.yoko-case th,.yoko-case td{border:1px solid #e5e7eb;padding:14px 16px;text-align:left;min-width:180px;vertical-align:top}
+.yoko-case th{background:#f4f5f6}.yoko-case strong{font-weight:650}
+@media(max-width:760px){.yoko-case>h1,.yoko-case>h2{font-size:23px}.yoko-case>p,.yoko-case>ul,.yoko-case>ol{font-size:16px}.yoko-case img{border-radius:10px}}
+
+/* v44: shared case rhythm; existing home/card styles unchanged */
+.case__hero-cover{width:80%;margin:0 auto;overflow:hidden;border-radius:32px}
+.case__hero-cover img{display:block;width:100%;height:auto}
+.case .ozon-buildin--embedded{background:transparent;color:var(--ink);font-family:inherit;font-size:18px;line-height:1.65;min-height:0;width:100%;}
+.case .ozon-buildin--embedded .ozon-buildin__document{width:75%;max-width:none;margin:0 auto;padding:0 0 32px}
+.case .ozon-buildin--embedded .ozon-buildin__document h2{font-size:25px;line-height:36px;margin:44px 0 18px;color:var(--ink)}
+.case .ozon-buildin--embedded .ozon-buildin__document h3{font-size:20px;line-height:28px;margin:32px 0 14px;color:var(--ink)}
+.case .ozon-buildin--embedded .ozon-buildin__document h4{font-size:18px;margin:24px 0 12px;color:var(--ink)}
+.case .ozon-buildin--embedded .ozon-buildin__document p{margin:12px 0}
+.case .ozon-buildin--embedded .ozon-buildin__document figure{margin:30px 0}
+.case .ozon-buildin--embedded .ozon-buildin__document figure img{border-radius:16px}
+.yoko-research{max-width:850px;margin:20px auto 30px;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;font-size:16px}
+.yoko-research summary{display:flex;justify-content:space-between;align-items:center;gap:20px;cursor:pointer;padding:17px 20px;color:#2471d8;font-weight:650;list-style:none}
+.yoko-research summary::-webkit-details-marker{display:none}
+.yoko-research__chevron{font-size:24px;line-height:1;transition:transform .2s}
+.yoko-research[open] .yoko-research__chevron{transform:rotate(180deg)}
+.yoko-research__body{padding:16px 20px 24px;border-top:1px solid #e5e7eb;line-height:1.65}
+.yoko-research__scroll{overflow-x:auto}
+.yoko-research table{display:table;width:100%;min-width:780px;border-collapse:collapse;margin:0}
+.yoko-research th,.yoko-research td{padding:12px;border:1px solid #e5e7eb;vertical-align:top;text-align:left;min-width:145px;font-size:14px}
+.yoko-research th{background:#f5f6f7}
+.yoko-research__body h3{margin:22px 0 12px;font-size:20px}
+.yoko-research__body p{margin:12px 0}
+@media(max-width:760px){.case__hero-cover{width:100%;border-radius:18px}.case .ozon-buildin--embedded .ozon-buildin__document{width:100%;padding:0 0 24px}.case .ozon-buildin--embedded{font-size:16px}.yoko-research{font-size:15px}.yoko-research summary{padding:14px}}
+
+/* v45: explicit chapter boundaries and reference-aligned research accordions */
+.case .ozon-buildin--embedded .ozon-buildin__document .ozon-buildin__chapter-divider{display:block;height:1px;border:0;background:#e5e7eb;margin:48px 0 40px;width:100%;}
+.case .ozon-buildin--embedded .ozon-buildin__chapter:last-child .ozon-buildin__chapter-divider{margin-bottom:0;}
+.yoko-case .yoko-research{width:100%;max-width:960px;margin:24px auto 36px;border:1px solid #dfe3e8;border-radius:16px;box-sizing:border-box;background:#fff;overflow:hidden;}
+.yoko-case .yoko-research summary{display:flex;align-items:center;justify-content:space-between;min-height:68px;box-sizing:border-box;padding:18px 24px;gap:24px;color:#0876dc;font-weight:650;line-height:1.35;}
+.yoko-case .yoko-research__label{display:inline-flex;align-items:center;gap:14px;min-width:0;}
+.yoko-case .yoko-research__icon{font-size:22px;line-height:1;flex:none;}
+.yoko-case .yoko-research__chevron{font-size:27px;line-height:1;display:inline-flex;align-items:center;justify-content:center;flex:none;}
+@media(max-width:760px){.yoko-case .yoko-research summary{padding:16px 18px;min-height:60px}.yoko-case .yoko-research__label{gap:10px}}
+
+/* v46: accordions align precisely with Yoko case text column */
+.yoko-case .yoko-research {width:100%;max-width:850px;margin:24px auto 36px;}
+.yoko-case .yoko-research summary {width:100%;padding:18px 24px;align-items:center;}
+.yoko-case .yoko-research__label {display:flex;align-items:center;gap:14px;min-width:0;}
+.yoko-case .yoko-research__label>span:last-child {min-width:0;}
+.yoko-case .yoko-research__chevron {margin-left:auto;flex-shrink:0;}
+@media(max-width:760px){.yoko-case .yoko-research summary{padding:16px 18px}}
+
+/* v47: approved Yoko research accordion, matching standalone preview */
+.yoko-case .yoko-research{width:100%;max-width:850px;margin:16px auto;border:1px solid #dfe3e9;border-radius:14px;overflow:hidden;background:#fff;box-sizing:border-box;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+.yoko-case .yoko-research summary{display:flex;align-items:center;gap:12px;min-height:72px;padding:18px 24px;list-style:none;cursor:pointer;color:#0877e9;font-size:20px;font-weight:650;line-height:1.35;box-sizing:border-box}
+.yoko-case .yoko-research summary::-webkit-details-marker{display:none}
+.yoko-case .yoko-research summary:focus-visible{outline:2px solid #0877e9;outline-offset:-4px;border-radius:14px}
+.yoko-case .yoko-research__label{display:contents}
+.yoko-case .yoko-research__label>span:last-child{min-width:0;flex:1}
+.yoko-case .yoko-research__icon{display:block;width:20px;height:20px;flex:none}
+.yoko-case .yoko-research__chevron{display:block;width:22px;height:22px;flex:none;margin-left:auto;transition:transform .2s ease}
+.yoko-case .yoko-research[open] .yoko-research__chevron{transform:rotate(180deg)}
+.yoko-case .yoko-research__body{padding:0 24px 24px;border-top:0;color:#4d5563;font-size:15px;line-height:1.6}
+.yoko-case .yoko-research__body> :first-child{border-top:1px solid #edf0f4;padding-top:14px}
+.yoko-case .yoko-research__interviews h3{font-size:18px;margin:24px 0 8px}
+.yoko-case .yoko-research__interviews p{font-size:15px;line-height:1.65;margin:10px 0}
+.yoko-case hr.yoko-section-divider{display:block;max-width:850px;width:100%;margin:52px auto;border:0;border-top:1px solid #eceef0}
+@media(max-width:600px){.yoko-case .yoko-research summary{font-size:17px;padding:16px 18px;min-height:66px}.yoko-case .yoko-research__body{padding:0 18px 18px}}
+
+/* v49: unified approved Ozon HR content grid: 900px of 1200px */
+.case .case__hero-cover{width:75%;max-width:900px}
+.case .yoko-case,.case .global-case{width:75%;max-width:900px;margin-inline:auto;min-width:0;box-sizing:border-box}
+.case .yoko-case>h1,.case .yoko-case>h2,.case .yoko-case>h3,.case .yoko-case>h4,.case .yoko-case>h5,.case .yoko-case>h6,.case .yoko-case>p,.case .yoko-case>ul,.case .yoko-case>ol,.case .yoko-case>table,.case .yoko-case>blockquote,.case .yoko-case>hr,.case .yoko-case>p:has(>img),.case .yoko-case>video,.case .yoko-case .yoko-research{width:100%;max-width:100%;box-sizing:border-box}
+.case .global-case .global-section{width:100%;max-width:100%;box-sizing:border-box}
+@media(max-width:760px){.case .case__hero-cover,.case .yoko-case,.case .global-case{width:100%;max-width:100%}}
+
+/* v57: other-case carousel and card hover */
+.case__more-row{position:relative}
+.case__more-nav{display:flex!important;position:absolute;top:50%;transform:translateY(-50%);z-index:12;align-items:center;justify-content:center;width:64px;height:64px;border:0;border-radius:50%;background:#1d1d1d;color:white;cursor:pointer;transition:opacity .22s ease}
+.case__more-nav:hover{opacity:.65}
+.case__more-nav--prev{left:-30px}.case__more-nav--next{right:-30px}
+.case__more-nav:disabled{display:none!important}
+.case__more-scroller{scroll-behavior:smooth}
+.card{position:relative}
+.card__hover-open{pointer-events:none;position:absolute;left:0;top:0;z-index:20;width:112px;height:112px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:rgba(80,80,80,.46);color:white;font-size:14px;font-weight:600;letter-spacing:.04em;opacity:0;transform:translate(-50%,-50%) scale(.85);transition:opacity .2s ease,transform .2s ease;white-space:nowrap}
+@media(hover:hover) and (pointer:fine){.card:hover .card__hover-open{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+@media(hover:none){.card__hover-open{display:none}}
+@media(max-width:800px){.case__more-nav{width:44px;height:44px}.case__more-nav--prev{left:-12px}.case__more-nav--next{right:-12px}}

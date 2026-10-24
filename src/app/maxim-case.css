@@ -1,0 +1,28 @@
+
+/* Maxim case and its research subpage — same approved Ozon HR grid */
+.case .maxim-case{width:75%;max-width:900px;margin:0 auto}
+.case .maxim-case>section:first-child{padding-top:16px}
+.case .maxim-case img{display:block;width:100%;height:auto;border-radius:18px;margin:20px 0}
+.case .maxim-case table,.case .maxim-research table{min-width:0;width:100%;font-size:15px;border-collapse:collapse}
+.case .maxim-case th,.case .maxim-case td,.case .maxim-research th,.case .maxim-research td{position:static;min-width:0;border:1px solid #e7e9ed;padding:14px 16px;text-align:left;vertical-align:top;background:#fff}
+.case .maxim-case thead th,.case .maxim-research thead th{background:#f7f8fa;font-weight:650}
+.case .maxim-case table{display:block;overflow-x:auto}
+.case .maxim-case a.maxim-interview-link{display:flex;align-items:center;gap:14px;padding:20px 0;border-bottom:1px solid #e7e9ed;text-decoration:none;font-size:18px;font-weight:650;color:#1769d4}
+.maxim-file-icon{font-size:25px;font-weight:400}.maxim-link-arrow{margin-left:auto;font-size:20px}
+.maxim-subpage-intro{width:75%;max-width:900px;margin:0 auto;padding:38px 0 18px}
+.maxim-back{color:#777;text-decoration:none;font-size:15px}.maxim-back:hover{color:#1769d4}
+.maxim-eyebrow{font-size:15px;color:#858585;margin:46px 0 12px}
+.maxim-subpage-intro h1{font-size:clamp(36px,4vw,54px);letter-spacing:-.045em;line-height:1.15;margin:0 0 16px}
+.maxim-subpage-intro>p:last-child{font-size:18px;line-height:1.6;color:#555;max-width:690px}
+.case .maxim-research{width:75%;max-width:900px;margin:0 auto}
+.case .maxim-research .global-section{padding:42px 0 44px}
+.case .maxim-research .global-section h2{margin:0 0 25px}
+.maxim-table-wrap{width:100%;overflow-x:auto;border:1px solid #e7e9ed;border-radius:14px}
+.case .maxim-research .maxim-data-table{border:0}
+.case .maxim-research .maxim-data-table th,.case .maxim-research .maxim-data-table td{border-top:0;border-left:0;min-width:0}
+.case .maxim-research .maxim-data-table tbody th{width:40%;font-weight:600}
+.case .maxim-research .maxim-data-table p{margin:0;font-size:16px;line-height:1.6}
+.maxim-answer+.maxim-answer{margin-top:7px}
+@media(max-width:760px){.case .maxim-case,.case .maxim-research,.maxim-subpage-intro{width:100%;max-width:100%}.maxim-subpage-intro{padding-top:22px}.case .maxim-research .maxim-data-table th,.case .maxim-research .maxim-data-table td{padding:11px;font-size:14px}.case .maxim-research .maxim-data-table p{font-size:14px}}
+
+.maxim-subpage-intro .maxim-back{display:inline-block;margin-bottom:32px}
