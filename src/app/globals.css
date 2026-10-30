@@ -1659,3 +1659,59 @@ button {
 @media(hover:hover) and (pointer:fine){.card:hover .card__hover-open{opacity:1;transform:translate(-50%,-50%) scale(1)}}
 @media(hover:none){.card__hover-open{display:none}}
 @media(max-width:800px){.case__more-nav{width:44px;height:44px}.case__more-nav--prev{left:-12px}.case__more-nav--next{right:-12px}}
+
+/* v59: secondary hero typography and carousel arrows */
+.hero__sub{font-size:22px;line-height:1.34;display:inline-block;max-width:850px}
+.case__more-nav svg{display:block;width:24px;height:24px;flex-shrink:0}
+@media(max-width:700px){.hero__sub{font-size:19px;line-height:1.32}}
+
+/* v66: Ozon HR home artwork — seamless, uncropped, no blend-mode.
+   The original PNG already has the exact island background #F2F3F5.
+   Use the complete artwork within the card's image area. */
+.grid > .card:first-child .card__art.portfolio-art {
+  position: relative;
+  inset: auto;
+  left: auto;
+  width: 100%;
+  max-width: 100%;
+  margin-top: 0;
+  background: #F2F3F5;
+  overflow: hidden;
+}
+.grid > .card:first-child .card__art.portfolio-art img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none;
+  object-fit: contain !important;
+  object-position: center center !important;
+  mix-blend-mode: normal !important;
+}
+
+/* v67: Use the user's 2048x706 (2.90:1) custom-sized cover at native
+   aspect ratio. Keep the devices large without cropping or distortion. */
+.grid > .card:first-child .card__art.portfolio-art {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 2048 / 706;
+  flex: 0 0 auto;
+  margin-top: auto;
+  overflow: hidden;
+  background: #F2F3F5;
+}
+.grid > .card:first-child .card__art.portfolio-art img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: fill !important;
+  mix-blend-mode: normal !important;
+}
+@media (max-width: 1023px) {
+  .grid > .card:first-child .card__art.portfolio-art {
+    aspect-ratio: 2048 / 706;
+    margin-top: 20px;
+  }
+}
